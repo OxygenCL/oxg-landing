@@ -54,8 +54,7 @@ function WordReveal({ text, className, style }: { text: string; className?: stri
         transform: visible ? (rotVisible ? "translateY(0px)" : "translateY(12px)") : "translateY(28px)",
         transition: visible ? "opacity 0.4s ease, transform 0.4s ease"
           : `opacity 0.55s ease ${staticWords.length * 0.07}s, transform 0.55s cubic-bezier(0.22,1,0.36,1) ${staticWords.length * 0.07}s`,
-        background: "linear-gradient(90deg, #c084fc, #818cf8, #67e8f9)",
-        WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+        color: "#8B9FFF",
       }}>{rotatingEnding[rotIndex]}</span>
     </h1>
   )
