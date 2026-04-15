@@ -87,10 +87,7 @@ function RotatingHeading({ static: staticText, words, className, style }: { stat
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0px)" : "translateY(10px)",
           transition: "opacity 0.4s ease, transform 0.4s ease",
-          background: "linear-gradient(90deg, #4361ee, #818cf8)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
+          color: "#8B9FFF",
         }}>
           {words[index]}
         </span>
