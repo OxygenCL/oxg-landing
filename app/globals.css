@@ -1,0 +1,236 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+/* Oxygen.tech Brand Colors */
+:root {
+  /* Light theme - used for most sections */
+  --background: #ffffff;
+  --foreground: #1f2937;
+  --card: #ffffff;
+  --card-foreground: #1f2937;
+  --popover: #ffffff;
+  --popover-foreground: #1f2937;
+  --primary: #122D87;
+  --primary-foreground: #ffffff;
+  --secondary: #f8f9fb;
+  --secondary-foreground: #1f2937;
+  --muted: #f8f9fb;
+  --muted-foreground: #6b7280;
+  --accent: #122D87;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #122D87;
+  --radius: 0.625rem;
+  
+  /* Custom brand colors */
+  --navy-dark: #0A2434;
+  --navy-mid: #122D4A;
+  --royal-blue: #122D87;
+  --blue-accent: #192B6A;
+  --light-gray: #f8f9fb;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Custom colors */
+  --color-navy-dark: var(--navy-dark);
+  --color-navy-mid: var(--navy-mid);
+  --color-royal-blue: var(--royal-blue);
+  --color-blue-accent: var(--blue-accent);
+  --color-light-gray: var(--light-gray);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(30px, 10px) scale(1.02); }
+}
+
+@keyframes heroKenBurns {
+  0%   { transform: scale(1.0)  translate(0%, 0%); }
+  25%  { transform: scale(1.18) translate(-5%, -4%); }
+  50%  { transform: scale(1.12) translate(6%, 3%); }
+  75%  { transform: scale(1.2)  translate(-4%, 5%); }
+  100% { transform: scale(1.0)  translate(0%, 0%); }
+}
+
+.animate-ken-burns {
+  animation: heroKenBurns 10s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes count-up {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-marquee {
+  animation: marquee 70s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee 40s linear infinite;
+}
+
+.animate-gradient {
+  animation: gradient 8s ease-in-out infinite;
+  background-size: 200% 200%;
+}
+
+.animate-blob {
+  animation: blob 20s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out forwards;
+}
+
+.animate-count-up {
+  animation: count-up 0.5s ease-out forwards;
+}
+
+/* Hero CSS background animation */
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  33%       { background-position: 100% 30%; }
+  66%       { background-position: 50% 100%; }
+}
+@keyframes beam1 {
+  0%        { transform: translateX(-120%) rotate(35deg); opacity: 0; }
+  10%       { opacity: 1; }
+  90%       { opacity: 0.6; }
+  100%      { transform: translateX(220%) rotate(35deg); opacity: 0; }
+}
+@keyframes beam2 {
+  0%        { transform: translateX(-120%) rotate(35deg); opacity: 0; }
+  10%       { opacity: 0.7; }
+  90%       { opacity: 0.3; }
+  100%      { transform: translateX(220%) rotate(35deg); opacity: 0; }
+}
+@keyframes beam3 {
+  0%        { transform: translateX(-120%) rotate(35deg); opacity: 0; }
+  10%       { opacity: 0.5; }
+  90%       { opacity: 0.2; }
+  100%      { transform: translateX(220%) rotate(35deg); opacity: 0; }
+}
+
+/* Hero title light sweep */
+@keyframes lightSweep {
+  0%   { -webkit-mask-position: -80% center; mask-position: -80% center; }
+  100% { -webkit-mask-position: 180% center; mask-position: 180% center; }
+}
+
+.hero-sweep-overlay {
+  color: white;
+  text-shadow: 0 0 25px rgba(255,255,255,0.95), 0 0 55px rgba(210,190,255,0.7);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, white 35%, white 65%, transparent 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, white 35%, white 65%, transparent 100%);
+  -webkit-mask-size: 55% 100%;
+  mask-size: 55% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: lightSweep 1.8s ease-in-out 1 forwards;
+  pointer-events: none;
+}
+
+
+/* Fade in on scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sticky scroll section */
+.sticky-image-container {
+  position: sticky;
+  top: 5rem;
+  height: calc(100vh - 10rem);
+}
+
+.scroll-text-block {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
