@@ -10,7 +10,7 @@ import { ArrowRight, ChevronRight, Check, BarChart2, Calendar, Zap, Shield, User
 ───────────────────────────────────────────── */
 const industries = {
   metalmecanico: {
-    name: "Metalmecánico",
+    name: "Metalmecánica",
     chip: "Soluciones para la industria Metalmecánica",
     subTypes: ["Talleres CNC", "Maestranzas", "Estructuras metálicas", "Herrería industrial", "Conformado de metales"],
     accent: "metalmecánica.",
@@ -47,7 +47,6 @@ const industries = {
       { value: "+93%", label: "Cumplimiento preventivo" },
       { value: "38 min", label: "Tiempo de resp. OT" },
       { value: "−61%", label: "Fallas no planificadas" },
-      { value: "3.2×", label: "ROI primer año" },
     ],
     quote: "Tenía 60 equipos sin historial y el mantenimiento dependía de una sola persona. Con OxyPulse organizamos todo en semanas: planes preventivos, historial por máquina y costo real de cada activo.",
     author: "Jorge Huenul",
@@ -96,7 +95,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "<45 min", label: "Resp. ante falla" },
       { value: "100%", label: "Trazabilidad digital" },
-      { value: "−50%", label: "Fallas en temporada" },
     ],
     quote: "En alimentos no puedes improvisar. Con OxyPulse tenemos el historial completo de cada equipo y el calendario de preventivos al día. Ya no hay sorpresas.",
     author: "Walter Aguirre",
@@ -140,7 +138,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−65%", label: "Fallas no planificadas" },
       { value: "<45 min", label: "Tiempo de resp. OT" },
-      { value: "100%", label: "Trazabilidad multi-turno" },
     ],
     quote: "En minería, cada hora de un camión parado son miles de dólares. Con OxyPulse por primera vez tenemos el historial de cada activo y los preventivos al día sin depender de planillas.",
     author: "Equipo de Mantenimiento",
@@ -184,7 +181,6 @@ const industries = {
       { value: ">95%", label: "Disponibilidad de flota" },
       { value: "−60%", label: "Fallas en ruta" },
       { value: ">88%", label: "Cumplimiento preventivo" },
-      { value: "100%", label: "Visibilidad multi-sitio" },
     ],
     quote: "Antes gestionábamos 80 camiones con una planilla por base. Con OxyPulse tenemos todo centralizado: preventivos al día, alertas de vencimiento y el historial de cada unidad en un clic.",
     author: "Rodrigo Sepúlveda",
@@ -229,7 +225,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−50%", label: "Paradas no planificadas" },
       { value: "+30%", label: "Eficiencia de shutdown" },
-      { value: "100%", label: "Trazabilidad de backlog" },
     ],
     quote: "Antes del shutdown teníamos cientos de trabajos dispersos en correos y planillas. Con OxyPulse el backlog llega ordenado, priorizado y asignado. El shutdown de este año fue el más eficiente en años.",
     author: "Felipe Contreras",
@@ -278,7 +273,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−60%", label: "Fallas en temporada" },
       { value: "100%", label: "Historial por activo" },
-      { value: "3–5×", label: "ROI vs. reactivo" },
     ],
     quote: "Llegábamos a cada temporada sin saber el estado real de los equipos. Con OxyPulse el mantenimiento mayor se hace en la inter-temporada y cuando empieza la cosecha, sabemos qué tiene cada activo.",
     author: "Cristián Morales",
@@ -294,8 +288,8 @@ const industries = {
     name: "Construcción",
     chip: "Soluciones para la industria de la Construcción",
     subTypes: ["Constructoras civiles", "Concesionarias viales", "Obras de infraestructura", "Constructoras inmobiliarias", "Plantas de hormigón"],
-    accent: "en obra.",
-    headline: ["La maquinaria parada cuesta plazos,"],
+    accent: "cuesta plazos",
+    headline: ["La maquinaria parada en obra,"],
     description:
       "OxyPulse centraliza el mantenimiento de tu flota de maquinaria pesada, equipos de obra y sistemas de infraestructura. Menos correctivo, plazos cumplidos y revisiones técnicas al día en todas tus faenas.",
     painPoints: [
@@ -328,7 +322,6 @@ const industries = {
       { value: ">88%", label: "Cumplimiento preventivo" },
       { value: "−55%", label: "Fallas no planificadas" },
       { value: "100%", label: "Revisiones al día" },
-      { value: "2.8×", label: "ROI primer año" },
     ],
     quote: "Teníamos la flota de maquinaria en tres faenas distintas y ningún registro centralizado. Con OxyPulse vemos todo desde un panel: preventivos al día, revisiones vigentes y el historial de cada máquina.",
     author: "Marcelo Araya",
@@ -378,7 +371,6 @@ const industries = {
       { value: ">92%", label: "Cumplimiento preventivo" },
       { value: "−60%", label: "Eventos no planificados" },
       { value: "100%", label: "Trazabilidad digital" },
-      { value: "+25%", label: "Eficiencia de paradas mayores" },
     ],
     quote: "Con activos en cuatro sitios distintos necesitábamos más que planillas. OxyPulse nos dio trazabilidad completa y hoy cada intervención queda registrada, sin depender de carpetas ni archivos locales.",
     author: "Patricio Vega",
@@ -428,7 +420,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−65%", label: "Fallas críticas en temporada" },
       { value: "100%", label: "Trazabilidad de activos" },
-      { value: "3×", label: "ROI vs. correctivo" },
     ],
     quote: "En acuicultura no hay segunda oportunidad cuando falla un equipo en cosecha. Con OxyPulse organizamos los preventivos en la inter-temporada y llegamos con todos los activos críticos revisados.",
     author: "Álvaro Núñez",
@@ -478,7 +469,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−58%", label: "Fallas no planificadas" },
       { value: "+12%", label: "OEE de línea" },
-      { value: "3×", label: "ROI primer año" },
     ],
     quote: "Producíamos con mantenimiento 100% correctivo. Con OxyPulse implementamos preventivos en 3 semanas, el OEE de la línea principal subió 11 puntos en 90 días y por primera vez tenemos datos reales.",
     author: "Daniela Rojas",
@@ -528,7 +518,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento de PM" },
       { value: "100%", label: "Documentos vigentes" },
       { value: "−55%", label: "Servicios de emergencia" },
-      { value: "3×", label: "ROI vs. correctivo" },
     ],
     quote: "Tenía 80 camionetas en cuatro regiones y el historial de cada una en planillas distintas. Con OxyPulse centralizamos todo: el PM por km se activa solo, las revisiones técnicas no vencen más y los costos por unidad son visibles.",
     author: "Rodrigo Castillo",
@@ -578,7 +567,6 @@ const industries = {
       { value: ">88%", label: "Cumplimiento preventivo" },
       { value: "−50%", label: "Emergencias de frío" },
       { value: "100%", label: "Certificaciones vigentes" },
-      { value: "3×", label: "ROI vs. correctivo" },
     ],
     quote: "Teníamos 40 locales con mantenimiento 100% reactivo. Con OxyPulse centralizamos todo: cada contratista registra su trabajo, el equipo de frío tiene preventivos reales y el tablero muestra el estado de cada tienda.",
     author: "Andrea Méndez",
@@ -908,7 +896,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       <section
         id="section-suite"
         ref={cardsRevealRef as React.RefObject<HTMLElement>}
-        className="py-24"
+        className="py-12 sm:py-24"
         style={{ background: "#f6f9fc" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -954,12 +942,12 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       {/* ── SUITE SECTION (WHITE, STRIPE-STYLE) ─ */}
       <section
         ref={suiteRevealRef as React.RefObject<HTMLElement>}
-        className="py-24 bg-white border-t border-gray-100"
+        className="py-12 sm:py-24 bg-white border-t border-gray-100"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header — like Stripe's program section */}
           <div
-            className="max-w-4xl mb-16"
+            className="max-w-4xl mb-8 sm:mb-16"
             style={{ opacity: suiteRevealVisible ? 1 : 0, transform: suiteRevealVisible ? "none" : "translateY(20px)", transition: "opacity 0.6s ease, transform 0.6s ease" }}
           >
             <p className="text-xs font-semibold uppercase tracking-widest text-[#4361ee] mb-4">Oxygen Suite</p>
@@ -988,7 +976,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       <section
         id="section-oxypulse"
         ref={pulseRevealRef as React.RefObject<HTMLElement>}
-        className="py-24 bg-white"
+        className="py-12 sm:py-24 bg-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -1022,22 +1010,24 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
               style={{ opacity: pulseRevealVisible ? 1 : 0, transform: pulseRevealVisible ? "none" : "translateX(24px)", transition: "opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s" }}
             >
               <OxyPulseMockup />
-              {/* Customer story chip */}
-              <div className="bg-[#f6f9fc] rounded-2xl border border-gray-200 p-4 flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-gray-400 mb-1">Historia del cliente</p>
-                  <p className="text-sm font-semibold text-[#0a2434]">
-                    Cómo {industry.name} logró +90% cumplimiento preventivo
-                  </p>
-                  <a className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-[#4361ee] hover:gap-1.5 transition-all">
-                    Más información <ChevronRight className="w-3 h-3" />
-                  </a>
-                </div>
-                <div className="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl font-black ml-4"
-                  style={{ background: "linear-gradient(135deg, #4361ee, #1e40af)", color: "white" }}>
-                  O
-                </div>
-              </div>
+              {/* Customer story chip — only for metalmecánica */}
+              {industria === "metalmecanico" && (
+                <Link href="/casos/amcs-digitalizacion-mantenimiento" className="bg-[#f6f9fc] rounded-2xl border border-gray-200 p-4 flex items-center justify-between hover:border-[#4361ee]/40 hover:shadow-sm transition-all">
+                  <div>
+                    <p className="text-xs text-gray-400 mb-1">Caso de éxito</p>
+                    <p className="text-sm font-semibold text-[#0a2434]">
+                      Cómo AMCS transformó su mantenimiento con OxyPulse
+                    </p>
+                    <span className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-[#4361ee]">
+                      Leer caso completo <ChevronRight className="w-3 h-3" />
+                    </span>
+                  </div>
+                  <div className="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl font-black ml-4"
+                    style={{ background: "linear-gradient(135deg, #4361ee, #1e40af)", color: "white" }}>
+                    O
+                  </div>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -1047,7 +1037,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       {industria === "metalmecanico" && <section
         id="section-oxyplanner"
         ref={plannerRevealRef as React.RefObject<HTMLElement>}
-        className="py-24"
+        className="py-12 sm:py-24"
         style={{ background: "#f6f9fc" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1130,22 +1120,22 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       <section
         id="section-resultados"
         ref={statsRevealRef as React.RefObject<HTMLElement>}
-        className="py-24"
+        className="py-12 sm:py-24"
         style={{ background: "#f6f9fc" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16"
+          <div className="text-center mb-8 sm:mb-16"
             style={{ opacity: statsRevealVisible ? 1 : 0, transform: statsRevealVisible ? "none" : "translateY(20px)", transition: "opacity 0.6s ease, transform 0.6s ease" }}>
             <p className="text-xs font-semibold uppercase tracking-widest text-[#4361ee] mb-3">Resultados</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-[#0a2434] text-balance">
               Resultados típicos en {industry.name}
             </h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden">
             {industry.kpis.map((k, i) => (
               <div
                 key={i}
-                className="bg-white p-5 sm:p-8 text-center"
+                className={`bg-white p-5 sm:p-8 text-center${i === 2 ? " col-span-2 lg:col-span-1" : ""}`}
                 style={{ opacity: statsRevealVisible ? 1 : 0, transition: `opacity 0.5s ease ${i * 100}ms` }}
               >
                 <div className="text-4xl sm:text-5xl font-extrabold mb-2" style={{ color: "#4361ee" }}>
@@ -1161,7 +1151,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       {/* ── HELP SECTION ─────────────────────── */}
       <section
         ref={helpRevealRef as React.RefObject<HTMLElement>}
-        className="py-24 bg-white border-t border-gray-100"
+        className="py-12 sm:py-24 bg-white border-t border-gray-100"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12"
@@ -1216,7 +1206,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       </section>
 
       {/* ── FINAL CTA ────────────────────────── */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a2434 0%, #122D87 100%)" }}>
+      <section className="py-12 sm:py-24 relative overflow-hidden" style={{ background: "linear-gradient(135deg, #0a2434 0%, #122D87 100%)" }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at 30% 70%, #4361ee33 0%, transparent 60%)" }} />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 text-balance">
