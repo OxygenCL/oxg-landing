@@ -1,0 +1,29 @@
+name: Auto-merge V0 branches to main
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  auto-merge:
+    if: github.actor == 'v0[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge V0 branch into main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git checkout main
+          git merge --allow-unrelated-histories -X theirs origin/${{ github.ref_name }} \
+            -m "Auto-merge V0 changes from ${{ github.ref_name }}"
+          git push origin main
