@@ -3,14 +3,34 @@ import { ArrowRight } from "lucide-react"
 
 const resources = [
   {
-    tag: "Noticias",
-    industry: "Plataforma",
-    tagColor: "#0ea5e9",
-    title: "Presentando la Plataforma Oxygen: El sistema para sacar más de tu planta",
-    description: "OxyPulse, OxyPlanner y Advisory integrados en un solo ecosistema industrial diseñado para LATAM.",
-    metrics: ["OxyPulse", "OxyPlanner", "Advisory"],
-    href: "/recursos",
-    cta: "Leer más",
+    tag: "Caso de éxito",
+    industry: "Metalmecánica",
+    tagColor: "#16a34a",
+    title: "Cómo una planta metalmecánica pasó del 42% al 93% de cumplimiento preventivo en 4 meses",
+    description: "Con OxyPulse y OxyPlanner, el equipo de mantenimiento eliminó el modo reactivo y estableció un sistema de planificación que se cumple.",
+    metrics: ["+93% cumplimiento", "-61% fallas", "3.2x ROI"],
+    href: "/casos/metalmecanica-cumplimiento-preventivo",
+    cta: "Leer caso completo",
+  },
+  {
+    tag: "Artículo",
+    industry: "IA Industrial",
+    tagColor: "#4361ee",
+    title: "Preparando las operaciones de manufactura para el futuro con IA",
+    description: "Cómo la inteligencia artificial está transformando la forma en que las plantas industriales operan y toman decisiones.",
+    metrics: ["IA", "Manufactura", "Futuro"],
+    href: "/blog/preparando-operaciones-manufactura-ia",
+    cta: "Leer artículo",
+  },
+  {
+    tag: "Guía",
+    industry: "Mantenimiento",
+    tagColor: "#ea580c",
+    title: "Tu plan de mantenimiento en 8 pasos",
+    description: "Una guía práctica para estructurar un plan de mantenimiento preventivo que tu equipo realmente cumpla.",
+    metrics: ["8 pasos", "Preventivo", "Práctico"],
+    href: "/blog/plan-mantenimiento-8-pasos",
+    cta: "Leer guía",
   },
 ]
 
