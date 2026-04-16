@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 const industrias = [
-  { name: "Metalmecánica",          href: "/soluciones/metalmecanica" },
+  { name: "Metalmecánica",          href: "/soluciones/metalmecanico" },
   { name: "Alimentos y Bebidas",    href: "/soluciones/alimentos"     },
   { name: "Minería",                href: "/soluciones/mineria"       },
   { name: "Logística",              href: "/soluciones/logistica"     },
@@ -25,10 +25,10 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
 
         {/* Top: brand + nav */}
-        <div className="grid grid-cols-2 lg:grid-cols-[2fr_1fr_2fr_1fr_1fr] gap-10 lg:gap-8 pb-12 border-b border-white/10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_2fr_1fr_1fr] gap-8 lg:gap-8 pb-12 border-b border-white/10">
 
           {/* Brand */}
-          <div className="col-span-2 lg:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="block overflow-hidden mb-3" style={{ height: 36 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logos/logo-v2-2.svg" alt="Oxygen" width={200} style={{ marginTop: -24 }} />
@@ -41,7 +41,7 @@ export function Footer() {
               href="/nosotros#contacto"
               className="inline-flex mt-4 px-4 py-2 rounded-full text-xs font-semibold text-white border border-white/20 hover:bg-white/10 transition-colors"
             >
-              Contactar con ventas →
+              Habla con ventas →
             </Link>
           </div>
 
@@ -135,8 +135,8 @@ export function Footer() {
             © 2026, OXYGEN SPA | Todos los Derechos Reservados.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/privacy" className="text-white/30 hover:text-white/70 text-xs transition-colors">Privacidad</Link>
-            <Link href="/terms"   className="text-white/30 hover:text-white/70 text-xs transition-colors">Términos</Link>
+            <Link href="/politica-de-privacidad" className="text-white/30 hover:text-white/70 text-xs transition-colors">Privacidad</Link>
+            <Link href="/terminos-y-condiciones" className="text-white/30 hover:text-white/70 text-xs transition-colors">Términos</Link>
           </div>
         </div>
 

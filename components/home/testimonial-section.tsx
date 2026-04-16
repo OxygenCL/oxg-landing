@@ -39,7 +39,7 @@ const testimonials = [
     name: "Amanda Valladares",
     title: "Planificadora de Mantenimiento",
     company: "GYMSA",
-    logo: "/logos-web/15.png",
+    logo: "/logos-png/gymsa.png",
     slug: "",
     initials: "AV",
   },
@@ -87,8 +87,8 @@ export function TestimonialSection() {
   const t = testimonials[active]
 
   return (
-    <section className="py-28 bg-white border-t border-gray-100">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-12 md:py-28 bg-white border-t border-gray-100">
+      <div className="max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
         {/* Label */}
         <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#4361ee] mb-10">
           Nuestros clientes nos avalan
@@ -165,7 +165,7 @@ export function TestimonialSection() {
                 }}
               />
               <span
-                className="text-sm font-semibold"
+                className="text-xs sm:text-sm font-semibold truncate max-w-full px-1 text-center"
                 style={{ color: i === active ? "#0a2434" : "#9ca3af" }}
               >
                 {item.name}

@@ -44,7 +44,7 @@ export function PlatformIntroSection() {
         <div
           ref={sectionRef}
           className="font-bold text-balance"
-          style={{ fontSize: "clamp(1.5rem, 3.2vw, 2.8rem)", lineHeight: 1.35, color: "#0d0d1a" }}
+          style={{ fontSize: "clamp(1.8rem, 3.2vw, 2.8rem)", lineHeight: 1.35, color: "#0d0d1a" }}
         >
           {words.map((word, i) => {
             const wordP = Math.max(0, Math.min(1, (p - (i / words.length) * 0.7) / 0.35))

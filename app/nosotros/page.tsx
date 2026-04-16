@@ -1,8 +1,9 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { HubSpotForm } from "@/components/hubspot-form"
 
 const rotatingEnding = ["de LATAM.", "4.0"]
 const rotatingTeam = ["inteligente.", "eficiente.", "productiva.", "competitiva.", "conectada.", "ágil."]
@@ -54,7 +55,8 @@ function WordReveal({ text, className, style }: { text: string; className?: stri
         transform: visible ? (rotVisible ? "translateY(0px)" : "translateY(12px)") : "translateY(28px)",
         transition: visible ? "opacity 0.4s ease, transform 0.4s ease"
           : `opacity 0.55s ease ${staticWords.length * 0.07}s, transform 0.55s cubic-bezier(0.22,1,0.36,1) ${staticWords.length * 0.07}s`,
-        color: "#8B9FFF",
+        background: "linear-gradient(90deg, #4361ee, #60a5fa, #93c5fd)",
+        WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
       }}>{rotatingEnding[rotIndex]}</span>
     </h1>
   )
@@ -87,7 +89,10 @@ function RotatingHeading({ static: staticText, words, className, style }: { stat
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0px)" : "translateY(10px)",
           transition: "opacity 0.4s ease, transform 0.4s ease",
-          color: "#8B9FFF",
+          background: "linear-gradient(90deg, #4361ee, #60a5fa, #93c5fd)",
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+          backgroundClip: "text",
         }}>
           {words[index]}
         </span>
@@ -98,7 +103,7 @@ function RotatingHeading({ static: staticText, words, className, style }: { stat
 
 // Initials avatar color by index
 const avatarColors = [
-  "#122D87", "#4361ee", "#0d1b2e", "#1e40af", "#3730a3", "#0f4c81",
+  "#122D87", "#4361ee", "#0d1b2e", "#1e40af", "#1e40af", "#0f4c81",
   "#1a3a5c", "#2563eb", "#1e3a8a", "#1d4ed8", "#0e3460", "#0a2540",
   "#234b8a", "#153e75",
 ]
@@ -132,28 +137,14 @@ const team = [
   { name: "Armando Ortiz",          role: "Agente de Marketing"            },
 ]
 
-function HubSpotForm() {
-  useEffect(() => {
-    const script = document.createElement("script")
-    script.src = "https://js.hsforms.net/forms/embed/47294365.js"
-    script.defer = true
-    document.body.appendChild(script)
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [])
-
-  return (
-    <div
-      className="hs-form-frame"
-      data-region="na1"
-      data-form-id="288f7534-11de-4963-a0f1-5bd39435c07b"
-      data-portal-id="47294365"
-    />
-  )
-}
+const industries = [
+  "Metalmecánica", "Alimentos y Bebidas", "Minería", "Logística",
+  "Forestal", "Agrícola", "Construcción", "Energía",
+  "Pesquero y Acuicultura", "Manufacturera", "Automotriz", "Retail y Facilities",
+]
 
 export default function NosotrosPage() {
+
   return (
     <div className="min-h-screen bg-white">
 
@@ -178,7 +169,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* ── MISIÓN ── */}
-      <section className="bg-[#0d0020] border-t border-white/10">
+      <section className="bg-[#060e1f] border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -191,12 +182,14 @@ export default function NosotrosPage() {
             </div>
             <div className="space-y-4 text-white/60 text-base leading-relaxed">
               <p>
-                Oxygen es una empresa tecnológica latinoamericana que combina inteligencia artificial,
-                ingeniería industrial y operaciones para ayudar a las fábricas a operar en su óptimo.
+                La industria de LATAM lleva décadas operando con herramientas que no fueron diseñadas para ella.
+                Equipos que conocen cada máquina de memoria, pero sin cómo registrarlo. Plantas que generan datos,
+                pero sin manera de convertirlos en decisiones.
               </p>
               <p>
-                Creemos que la industria de LATAM merece tecnología de clase mundial construida desde adentro.
-                No a través de subsidios, sino a través de innovación y competitividad real.
+                Oxygen nació para cambiar eso. Somos tecnología industrial construida desde adentro, para la
+                realidad de acá, no adaptada desde otro mercado. Porque las plantas de LATAM no necesitan
+                menos ambición. Necesitan mejores herramientas.
               </p>
             </div>
           </div>

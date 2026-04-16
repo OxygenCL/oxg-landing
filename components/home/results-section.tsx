@@ -61,11 +61,11 @@ export function ResultsSection() {
   const offsets = [-1, 0, 1]
 
   return (
-    <section className="py-28 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-28 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <span className="text-xs font-semibold text-[#4361ee] uppercase tracking-widest block mb-4">
             Resultados típicos
           </span>

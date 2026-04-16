@@ -145,7 +145,7 @@ function ServiceStep({
         {/* Visual card */}
         <div className={reversed ? "lg:order-1" : ""}>
           <div
-            className="rounded-2xl p-10 flex flex-col items-center justify-center text-center min-h-[280px] border"
+            className="rounded-2xl p-6 lg:p-10 flex flex-col items-center justify-center text-center min-h-[280px] border"
             style={{ background: "linear-gradient(135deg, #0A2434 0%, #122D87 100%)", borderColor: "rgba(255,255,255,0.06)" }}
           >
             <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-5" style={{ background: "rgba(255,255,255,0.1)" }}>
@@ -211,7 +211,7 @@ export default function ConsultoriaPage() {
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-opacity hover:opacity-90"
                   style={{ background: "#4361ee" }}
                 >
-                  Hablar con un experto <ArrowRight className="w-4 h-4" />
+                  Contactar con ventas <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="#proceso"
@@ -228,15 +228,16 @@ export default function ConsultoriaPage() {
               <div className="rounded-2xl p-8 border" style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)" }}>
                 <div className="text-4xl mb-4" style={{ color: "rgba(255,255,255,0.15)", fontFamily: "Georgia, serif" }}>&quot;</div>
                 <p className="text-white font-medium leading-relaxed mb-6" style={{ fontSize: "1.05rem" }}>
-                  Por primera vez podemos medir de forma objetiva la confiabilidad de nuestros equipos. El equipo de Oxygen trabajó con nosotros en cada etapa, desde la integración técnica con nuestro ERP hasta la validación con los líderes de área. El resultado es un sistema que el equipo adoptó de verdad y KPIs que antes simplemente no existían.
+                  La disciplina y el trabajo metódico son el motor de estos resultados. Ver al equipo alcanzar su mejor tonelaje desde 2023 es la prueba de que, con las herramientas correctas y pasión, no hay límites.
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full flex items-center justify-center text-white font-bold text-xs" style={{ background: "rgba(67,97,238,0.5)" }}>
-                    K
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden border border-white/20">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/logos-png/kubiec.png" alt="KUBIEC" className="w-7 h-auto object-contain" />
                   </div>
                   <div>
-                    <p className="text-white text-sm font-semibold">Kubiec</p>
-                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Cliente Advisory</p>
+                    <p className="text-white text-sm font-semibold">Juan Carlos Yandún</p>
+                    <p className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>Superintendente de Producción, Kubiec</p>
                   </div>
                 </div>
               </div>
@@ -262,7 +263,7 @@ export default function ConsultoriaPage() {
               </p>
             </div>
             <div className="rounded-2xl p-8 border border-gray-100" style={{ background: "#f8f9ff" }}>
-              <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-6 border border-indigo-100" style={{ background: "#eef2ff" }}>
+              <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-6 border border-blue-100" style={{ background: "#eff6ff" }}>
                 <span className="text-xs font-bold tracking-wide" style={{ color: "#4361ee" }}>DIFERENCIADOR CLAVE</span>
               </div>
               <p className="font-semibold text-gray-900 leading-relaxed mb-6" style={{ fontSize: "1.12rem" }}>
@@ -351,7 +352,7 @@ export default function ConsultoriaPage() {
           </div>
           <div className="relative">
             {/* vertical line */}
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-indigo-100 hidden md:block" />
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-blue-100 hidden md:block" />
             <div className="space-y-8">
               {processSteps.map((step, i) => {
                 const Icon = step.icon
@@ -382,11 +383,16 @@ export default function ConsultoriaPage() {
           <blockquote className="font-semibold text-white leading-relaxed mb-8" style={{ fontSize: "clamp(1.2rem, 2vw, 1.7rem)" }}>
             &quot;Por primera vez podemos medir de forma objetiva la confiabilidad de nuestros equipos. El equipo de Oxygen trabajó con nosotros en cada etapa, desde la integración técnica con nuestro ERP hasta la validación con los líderes de área. El resultado es un sistema que el equipo adoptó de verdad y KPIs que antes simplemente no existían.&quot;
           </blockquote>
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{ background: "rgba(255,255,255,0.12)" }}>
-              K
+          <div className="flex items-center justify-center gap-4">
+            <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logos-png/kubiec.png" alt="KUBIEC" className="w-9 h-auto object-contain" />
             </div>
-            <p className="text-white text-sm font-semibold">Kubiec</p>
+            <div className="w-px h-8 bg-white/20" />
+            <div className="text-left">
+              <p className="text-white text-sm font-semibold">Juan Carlos Yandún</p>
+              <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>Superintendente de Producción, Kubiec</p>
+            </div>
           </div>
         </div>
       </section>

@@ -12,7 +12,7 @@ const products = [
 ]
 
 const industries = [
-  { name: "Metalmecánica",         href: "/soluciones/metalmecanica", icon: Settings2    },
+  { name: "Metalmecánica",         href: "/soluciones/metalmecanico", icon: Settings2    },
   { name: "Alimentos y Bebidas",   href: "/soluciones/alimentos",     icon: Sandwich     },
   { name: "Minería",               href: "/soluciones/mineria",       icon: HardHat      },
   { name: "Logística",             href: "/soluciones/logistica",     icon: Truck        },
@@ -28,8 +28,18 @@ const industries = [
 export function Navbar() {
   const [openDropdown, setOpenDropdown] = React.useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = React.useState(false)
+  const [openSection, setOpenSection] = React.useState<string | null>(null)
   const [scrolled, setScrolled] = React.useState(false)
   const timeoutRef = React.useRef<NodeJS.Timeout | null>(null)
+
+  const closeMobileMenu = () => {
+    setMobileOpen(false)
+    setOpenSection(null)
+  }
+
+  const toggleSection = (section: string) => {
+    setOpenSection(openSection === section ? null : section)
+  }
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -54,7 +64,7 @@ export function Navbar() {
         style={{ transform: scrolled ? "translateY(-100%)" : "translateY(0)" }}
       >
         <span className="font-medium tracking-wide uppercase text-xs">
-          OxyPlanner ya disponible — Planificación industrial con IA
+          OxyPlanner ya disponible<span className="hidden sm:inline"> — Planificación industrial con IA</span>
         </span>
         <Link
           href="/oxyplanner"
@@ -71,12 +81,19 @@ export function Navbar() {
       >
         <header className="pointer-events-auto w-full max-w-5xl">
           {/* Pill container */}
-          <nav className="bg-[#16162a]/80 backdrop-blur-md border border-white/10 rounded-2xl px-4 h-14 flex items-center justify-between shadow-2xl">
+          <nav className="bg-[#16162a]/80 backdrop-blur-md border border-white/10 rounded-2xl px-4 h-14 flex items-center justify-between shadow-2xl relative">
 
-            {/* Logo */}
-            <Link href="/" className="flex items-center flex-shrink-0">
+            {/* Logo desktop — flujo normal, alineado a la izquierda */}
+            <Link href="/" className="hidden lg:flex items-center flex-shrink-0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logos/logo-v2-2.svg" alt="Oxygen" width={200} height={86} />
+            </Link>
+
+            {/* Logo mobile — centrado absolutamente + spacer para balancear hamburger */}
+            <div className="lg:hidden w-10 flex-shrink-0" />
+            <Link href="/" className="lg:hidden absolute left-1/2 -translate-x-1/2 flex items-center" aria-label="Oxygen">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logos/logo-v2-2.svg" alt="" width={160} height={69} aria-hidden="true" />
             </Link>
 
             {/* Desktop links */}
@@ -229,71 +246,130 @@ export function Navbar() {
             {/* Mobile toggle */}
             <button
               className="lg:hidden p-2 text-white/70 hover:text-white rounded-lg hover:bg-white/10 transition-colors"
-              onClick={() => setMobileOpen(!mobileOpen)}
+              onClick={() => { setMobileOpen(!mobileOpen); setOpenSection(null) }}
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </nav>
 
-          {/* Mobile menu — debajo del pill */}
+          {/* Mobile menu — accordion style */}
           {mobileOpen && (
-            <div className="mt-2 bg-[#16162a]/95 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
-              <div className="p-4 space-y-1">
-                <div className="text-xs font-semibold text-white/40 uppercase tracking-widest px-3 pb-2">Productos</div>
-                {products.map((p) => (
-                  <Link key={p.name} href={p.href}
-                    className="flex items-center gap-3 px-3 py-2.5 text-white hover:text-white/80 hover:bg-white/10 rounded-lg transition-colors"
-                    onClick={() => setMobileOpen(false)}>
-                    <p.icon className="w-4 h-4 text-[#818cf8]" />
-                    <span className="text-sm font-medium">{p.name}</span>
-                  </Link>
-                ))}
+            <div className="mt-2 bg-[#0d1226] border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
 
-                <div className="text-xs font-semibold text-white/40 uppercase tracking-widest px-3 pb-2 pt-3">Industrias</div>
-                {industries.map((i) => (
-                  <Link key={i.name} href={i.href}
-                    className="flex items-center gap-3 px-3 py-2 text-sm text-white/70 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
-                    onClick={() => setMobileOpen(false)}>
-                    <i.icon className="w-4 h-4 text-[#818cf8] flex-shrink-0" />
-                    {i.name}
-                  </Link>
-                ))}
+              {/* ── PRODUCTOS ── */}
+              <div>
+                <button
+                  onClick={() => toggleSection('productos')}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/5 transition-colors"
+                >
+                  <span className="text-lg font-bold text-white">Productos</span>
+                  <ChevronDown className={cn("w-5 h-5 text-white/40 flex-shrink-0 transition-transform duration-200", openSection === 'productos' && "rotate-180")} />
+                </button>
+                {openSection === 'productos' && (
+                  <div className="px-4 pb-4 pt-1 space-y-1 border-t border-white/5">
+                    {products.map((p) => (
+                      <Link key={p.name} href={p.href}
+                        className="flex items-center gap-3 px-3 py-3 hover:bg-white/5 rounded-xl transition-colors"
+                        onClick={closeMobileMenu}>
+                        <div className="w-9 h-9 rounded-lg bg-[#4361ee]/20 border border-[#4361ee]/30 flex items-center justify-center flex-shrink-0">
+                          <p.icon className="w-4 h-4 text-[#818cf8]" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-white">{p.name}</div>
+                          <div className="text-xs text-white/40 mt-0.5">{p.description}</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
-                <div className="border-t border-white/10 pt-3 mt-3 space-y-2">
-                  <div className="text-xs font-semibold text-white/40 uppercase tracking-widest px-3 pb-1">Recursos</div>
-                  <Link href="/recursos?filter=casos"
-                    className="flex items-center gap-3 px-3 py-2.5 text-white hover:text-white/80 hover:bg-white/10 rounded-lg transition-colors"
-                    onClick={() => setMobileOpen(false)}>
-                    <FileText className="w-4 h-4 text-[#818cf8]" />
-                    <span className="text-sm font-medium">Casos de éxito</span>
-                  </Link>
-                  <Link href="/recursos?filter=articulos"
-                    className="flex items-center gap-3 px-3 py-2.5 text-white hover:text-white/80 hover:bg-white/10 rounded-lg transition-colors"
-                    onClick={() => setMobileOpen(false)}>
-                    <BookOpen className="w-4 h-4 text-[#818cf8]" />
-                    <span className="text-sm font-medium">Artículos</span>
-                  </Link>
-                  <Link href="/recursos?filter=guias"
-                    className="flex items-center gap-3 px-3 py-2.5 text-white hover:text-white/80 hover:bg-white/10 rounded-lg transition-colors"
-                    onClick={() => setMobileOpen(false)}>
-                    <BookOpen className="w-4 h-4 text-[#818cf8]" />
-                    <span className="text-sm font-medium">Guías</span>
-                  </Link>
-                  <Link href="/nosotros"
-                    className="block px-3 py-2 text-sm text-white hover:text-white/80 hover:bg-white/10 rounded-lg transition-colors"
-                    onClick={() => setMobileOpen(false)}>Nosotros</Link>
-                </div>
+              <div className="border-t border-white/5" />
 
-                <div className="border-t border-white/10 pt-3 mt-2 space-y-2">
-                  <a href="https://suite.oxygen.tech/login"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full px-4 py-3 text-center text-sm font-medium text-white border border-white/20 rounded-lg hover:bg-white/10 transition-colors"
-                    onClick={() => setMobileOpen(false)}>Iniciar sesión</a>
-                  <Link href="/nosotros#contacto"
-                    className="block w-full px-4 py-3 text-center text-sm font-semibold bg-[#4361ee] text-white rounded-lg hover:bg-[#3451d1] transition-colors"
-                    onClick={() => setMobileOpen(false)}>Contactar con ventas</Link>
-                </div>
+              {/* ── INDUSTRIAS ── */}
+              <div>
+                <button
+                  onClick={() => toggleSection('industrias')}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/5 transition-colors"
+                >
+                  <span className="text-lg font-bold text-white">Industrias</span>
+                  <ChevronDown className={cn("w-5 h-5 text-white/40 flex-shrink-0 transition-transform duration-200", openSection === 'industrias' && "rotate-180")} />
+                </button>
+                {openSection === 'industrias' && (
+                  <div className="px-4 pb-4 pt-3 border-t border-white/5">
+                    <div className="grid grid-cols-2 gap-1">
+                      {industries.map((i) => (
+                        <Link key={i.name} href={i.href}
+                          className="flex items-center gap-2 px-3 py-2.5 hover:bg-white/5 rounded-xl transition-colors"
+                          onClick={closeMobileMenu}>
+                          <div className="w-7 h-7 rounded-md bg-[#4361ee]/20 border border-[#4361ee]/30 flex items-center justify-center flex-shrink-0">
+                            <i.icon className="w-3.5 h-3.5 text-[#818cf8]" />
+                          </div>
+                          <span className="text-sm text-white/70 leading-tight">{i.name}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              <div className="border-t border-white/5" />
+
+              {/* ── RECURSOS ── */}
+              <div>
+                <button
+                  onClick={() => toggleSection('recursos')}
+                  className="w-full flex items-center justify-between px-6 py-5 text-left hover:bg-white/5 transition-colors"
+                >
+                  <span className="text-lg font-bold text-white">Recursos</span>
+                  <ChevronDown className={cn("w-5 h-5 text-white/40 flex-shrink-0 transition-transform duration-200", openSection === 'recursos' && "rotate-180")} />
+                </button>
+                {openSection === 'recursos' && (
+                  <div className="px-4 pb-4 pt-1 space-y-1 border-t border-white/5">
+                    {[
+                      { name: "Casos de éxito",  href: "/recursos?filter=casos",     icon: FileText, desc: "Resultados reales en plantas reales" },
+                      { name: "Artículos",        href: "/recursos?filter=articulos", icon: BookOpen, desc: "Tendencias e inteligencia industrial" },
+                      { name: "Guías",            href: "/recursos?filter=guias",     icon: BookOpen, desc: "Manuales prácticos de mantenimiento" },
+                    ].map((r) => (
+                      <Link key={r.name} href={r.href}
+                        className="flex items-center gap-3 px-3 py-3 hover:bg-white/5 rounded-xl transition-colors"
+                        onClick={closeMobileMenu}>
+                        <div className="w-9 h-9 rounded-lg bg-[#4361ee]/20 border border-[#4361ee]/30 flex items-center justify-center flex-shrink-0">
+                          <r.icon className="w-4 h-4 text-[#818cf8]" />
+                        </div>
+                        <div>
+                          <div className="text-sm font-semibold text-white">{r.name}</div>
+                          <div className="text-xs text-white/40 mt-0.5">{r.desc}</div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="border-t border-white/5" />
+
+              {/* ── NOSOTROS — direct link ── */}
+              <Link href="/nosotros"
+                className="block px-6 py-5 text-lg font-bold text-white hover:bg-white/5 transition-colors"
+                onClick={closeMobileMenu}>
+                Nosotros
+              </Link>
+
+              {/* ── CTAs ── */}
+              <div className="p-4 border-t border-white/10 space-y-2.5">
+                <Link href="/nosotros#contacto"
+                  className="block w-full py-4 text-center text-base font-bold bg-[#4361ee] text-white rounded-xl hover:bg-[#3451d1] transition-colors"
+                  onClick={closeMobileMenu}>
+                  Contactar con ventas
+                </Link>
+                <a href="https://suite.oxygen.tech/login"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full py-3 text-center text-sm font-medium text-white/50 hover:text-white/80 transition-colors"
+                  onClick={closeMobileMenu}>
+                  Iniciar sesión →
+                </a>
               </div>
             </div>
           )}

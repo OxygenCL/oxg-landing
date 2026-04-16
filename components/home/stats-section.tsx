@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react"
 
 const stats = [
-  { prefix: "+", num: 8,    suffix: "",  label: "Países conectados",  thousands: false },
+  { prefix: "+", num: 10,   suffix: "",  label: "Países conectados",  thousands: false },
   { prefix: "+", num: 500,  suffix: "",  label: "Usuarios activos",   thousands: false },
   { prefix: "+", num: 2000, suffix: "",  label: "Activos conectados", thousands: true  },
 ]

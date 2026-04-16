@@ -86,12 +86,13 @@ export function HeroSection() {
         <h1
           className="font-bold"
           style={{
+            fontSize: "clamp(2.8rem, 7.5vw, 6.5rem)",
             lineHeight: 1.05,
             letterSpacing: "-0.04em",
           }}
         >
           {/* Línea 1 */}
-          <span className="block relative" style={{ color: "rgba(255,255,255,0.95)", fontSize: "clamp(2.2rem, 7vw, 6.5rem)" }}>
+          <span className="block relative" style={{ color: "rgba(255,255,255,0.95)" }}>
             IA industrial para
             <span
               className="hero-sweep-overlay"
@@ -104,7 +105,6 @@ export function HeroSection() {
           <span
             className="block"
             style={{
-              fontSize: "clamp(2rem, 7vw, 6.5rem)",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0px)" : "translateY(12px)",
               transition: "opacity 0.4s ease, transform 0.4s ease",
@@ -120,7 +120,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subtítulo */}
-        <p className="mt-8 text-base sm:text-xl text-white/70 max-w-xl mx-auto">
+        <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-xl mx-auto">
           La plataforma de Oxygen ayuda a equipos industriales en LATAM a planificar, priorizar y decidir con datos reales.
         </p>
 

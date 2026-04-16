@@ -2,11 +2,94 @@
 
 import { use, useEffect, useRef, useState } from "react"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight } from "lucide-react"
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react"
 
 // ─── Case Study Data ────────────────────────────────────────────────────────
 
 const caseStudies: Record<string, CaseStudy> = {
+  "amcs-digitalizacion-mantenimiento": {
+    slug: "amcs-digitalizacion-mantenimiento",
+    tag: "CASO DE ÉXITO",
+    title: "De la intuición a los datos: cómo AMCS transformó su mantenimiento industrial",
+    industry: "Metalmecánica",
+    companySize: "200 – 500 empleados",
+    country: "Chile",
+    products: ["OxyPulse"],
+    about: "Empresa líder en infraestructura con líneas de producción de maquinaria de gran tonelaje y equipos de corte de alta precisión, que operaba con Excel y carpetas compartidas como sistema central de mantenimiento.",
+    accentColor: "#4361ee",
+    heroGradient: "from-[#0A2434] via-[#122D4A] to-[#0A2434]",
+    contents: [
+      { id: "resumen", label: "Resumen" },
+      { id: "impacto", label: "Impacto" },
+      { id: "que-cambio", label: "Qué cambió" },
+      { id: "como-lo-logramos", label: "Cómo lo logramos" },
+      { id: "faq", label: "Preguntas frecuentes" },
+    ],
+    summary: [
+      "En AMCS, la gestión de activos críticos vivía en un entorno vulnerable: planillas de Excel y carpetas compartidas en la nube. Cualquier técnico podía borrar una celda por accidente. Los reportes dependían de la memoria del equipo al final de la semana, lo que generaba datos inexactos y ninguna capacidad de análisis real.",
+      "El problema no era falta de trabajo, sino falta de evidencia. Sin un sistema centralizado, la gerencia operaba con puntos ciegos: desconocía el tiempo real dedicado a reparaciones, no podía detectar patrones de falla, y tomaba decisiones basadas en estimaciones.",
+      "Con OxyPulse, AMCS pasó de intuición a datos en menos de dos meses. Las órdenes de trabajo aumentaron un 152%, el cumplimiento del plan preventivo subió un 31.4%, y por primera vez el equipo tuvo trazabilidad total de sus correctivos.",
+    ],
+    heroQuote: {
+      text: "Dejamos de trabajar por intuición para trabajar con respaldo. Es una plataforma confiable que sirve para ir ordenando las actividades diarias.",
+      author: "Alfredo Olmos",
+      role: "Supervisor de Mantenimiento, AMCS",
+    },
+    impactMetrics: [
+      { value: "+152%", label: "Órdenes de trabajo registradas", sub: "incremento récord en registro de MOs" },
+      { value: "+31.4%", label: "Plan preventivo cumplido", sub: "mejora en mantenimientos programados" },
+      { value: "100%", label: "Visibilidad de correctivos", sub: "trazabilidad total de tareas" },
+    ],
+    whatChanged: [
+      {
+        heading: "Antes: mantenimiento invisible en Excel",
+        body: "La planta operaba, pero la gestión sufría de lo que llamamos 'Mantenimiento Invisible'. La información dependía de la memoria de los técnicos al final de la semana. Sin historial confiable, era imposible detectar qué activos fallaban más, cuánto tiempo tomaban las reparaciones, o si el plan preventivo se estaba cumpliendo.",
+        quote: {
+          text: "Cualquiera podía borrar una celda en Excel por accidente.",
+          author: "Martín Orfo",
+          role: "Ingeniero Mecánico, AMCS",
+        },
+      },
+      {
+        heading: "El problema real: decisiones sin respaldo",
+        body: "La gerencia operaba con puntos ciegos completos: desconocía el tiempo real dedicado a reparaciones, no podía detectar patrones de fallas recurrentes, y los reportes se basaban en estimaciones. Esto hacía imposible cualquier mejora continua real, y exponía la operación a fallas prevenibles que nadie podía anticipar.",
+      },
+      {
+        heading: "Con OxyPulse: cada tarea tiene trazabilidad",
+        body: "Con OxyPulse, cada técnico cierra su orden digitalmente en planta, alimentando automáticamente la hoja de vida del activo. Esto permitió calcular indicadores clave como el MTTR y asegurar que el plan preventivo se cumpla sin ser devorado por las urgencias del día a día.",
+        quote: {
+          text: "El sistema nos permitió ver con datos en mano dónde se concentraban las solicitudes, permitiéndonos reorganizar y optimizar nuestros recursos técnicos para cubrir esa demanda real.",
+          author: "Alfredo Olmos",
+          role: "Supervisor de Mantenimiento, AMCS",
+        },
+      },
+    ],
+    howWeDidIt: [
+      { step: "01", title: "Adaptación a la estructura existente", body: "OxyPulse se configuró sobre las líneas de producción existentes de AMCS sin reemplazar infraestructura. La carga de datos inicial y la configuración se realizaron en poco tiempo, permitiendo que el equipo empezara a registrar órdenes desde el primer día." },
+      { step: "02", title: "Digitalización de órdenes de trabajo", body: "Se eliminó el reporte de memoria. Cada técnico cerró sus órdenes digitalmente desde planta, generando un historial continuo y confiable. En pocas semanas, el volumen de MOs registradas aumentó un 152%, no porque hubiera más trabajo, sino porque ahora todo quedaba documentado." },
+      { step: "03", title: "Visibilidad de recursos y cuellos de botella", body: "Con datos reales en la pantalla, el equipo identificó que el área eléctrica concentraba una alta demanda de intervenciones que pasaba desapercibida en papel. Eso permitió reorganizar y optimizar los recursos técnicos para cubrir esa demanda real." },
+      { step: "04", title: "Plan preventivo con cumplimiento medible", body: "Con la hoja de vida de cada activo alimentada en tiempo real, el plan de mantenimiento preventivo pasó a tener seguimiento concreto. El cumplimiento subió un 31.4%, y por primera vez la gerencia pudo ver, con datos, si el plan se estaba ejecutando o no." },
+    ],
+    faq: [
+      {
+        question: "¿Cuál es la diferencia entre mantenimiento preventivo y correctivo en la gestión de datos?",
+        answer: "El mantenimiento preventivo es planificado para evitar fallas, mientras que el correctivo repara averías inesperadas. El error más común es no registrar los correctivos pequeños. OxyPulse captura ambos para calcular la disponibilidad real del equipo y detectar patrones de falla antes de que se conviertan en paros no planificados.",
+      },
+      {
+        question: "¿Por qué reemplazar Excel con un software de mantenimiento (CMMS)?",
+        answer: "Excel es vulnerable a errores humanos, duplicidad y pérdida de datos. Un software especializado ofrece integridad de la información, historial inalterable de cada activo, alertas automáticas y métricas en tiempo real como MTTR y cumplimiento del plan preventivo, algo imposible de sostener con planillas.",
+      },
+      {
+        question: "¿Cómo ayuda la digitalización a mejorar los procesos de planta?",
+        answer: "Transforma opiniones en hechos medibles. Permite identificar qué activos fallan más y por qué, facilitando decisiones estratégicas sobre renovación de equipos, stock de repuestos y ajustes en los planes de mantenimiento para maximizar la productividad.",
+      },
+      {
+        question: "¿Cuánto tiempo toma implementar OxyPulse en una planta?",
+        answer: "En AMCS, los primeros resultados se vieron en menos de dos meses. OxyPulse se adapta a la estructura de producción existente sin reemplazar infraestructura, lo que permite una transición rápida y sin fricción para el equipo de mantenimiento.",
+      },
+    ],
+    relatedSlugs: ["metalmecanica-cumplimiento-preventivo", "mineria-tiempo-paro"],
+  },
   "metalmecanica-cumplimiento-preventivo": {
     slug: "metalmecanica-cumplimiento-preventivo",
     tag: "CASO DE ÉXITO",
@@ -19,10 +102,11 @@ const caseStudies: Record<string, CaseStudy> = {
     accentColor: "#4361ee",
     heroGradient: "from-[#0A2434] via-[#122D4A] to-[#0A2434]",
     contents: [
-      { id: "resumen", label: "Resumen ejecutivo" },
+      { id: "resumen", label: "Resumen" },
       { id: "impacto", label: "Impacto" },
       { id: "que-cambio", label: "Qué cambió" },
       { id: "como-lo-logramos", label: "Cómo lo logramos" },
+      { id: "faq", label: "Preguntas frecuentes" },
     ],
     summary: [
       "El área de mantenimiento de esta planta llevaba años operando en modo reactivo. Con 3 líneas de producción continua y más de 600 activos críticos, el equipo de 18 técnicos pasaba el 70% de su tiempo apagando incendios: fallas imprevistas, órdenes de trabajo abiertas sin cerrar, repuestos agotados en el momento menos indicado.",
@@ -55,12 +139,36 @@ const caseStudies: Record<string, CaseStudy> = {
       { step: "03", title: "Primer plan semanal (semana 4)", body: "Con OxyPlanner, Jorge generó el primer plan de mantenimiento preventivo basado en datos. El equipo lo ejecutó con un 71% de cumplimiento — bajo comparado con el 93% final, pero ya el doble del 42% histórico." },
       { step: "04", title: "Ajuste y mejora continua (meses 2-4)", body: "Cada semana, los datos del plan real vs. ejecutado retroalimentaban el algoritmo. En 16 semanas, el sistema aprendió los patrones de la planta y el cumplimiento trepó al 93%. Los técnicos dejaron de ser bomberos y volvieron a ser mantenedores." },
     ],
+    faq: [
+      {
+        question: "¿Qué es el cumplimiento del plan de mantenimiento preventivo y por qué importa?",
+        answer: "Es el porcentaje de mantenimientos programados que realmente se ejecutan en el período planeado. Un cumplimiento bajo (como el 42% inicial de esta planta) significa que la mayor parte del mantenimiento se hace de forma reactiva, aumentando el riesgo de fallas imprevistas y paros no planificados.",
+      },
+      {
+        question: "¿Cómo reduce OxyPulse las fallas imprevistas en una planta industrial?",
+        answer: "OxyPulse centraliza en tiempo real el estado de cada activo crítico, el avance del plan preventivo y las alertas priorizadas por impacto. Al tener visibilidad completa, el equipo interviene antes de que ocurra la falla en lugar de reaccionar después. Esta planta redujo sus fallas imprevistas un 61% en 4 meses.",
+      },
+      {
+        question: "¿Puede OxyPlanner adaptarse a plantas con múltiples líneas de producción?",
+        answer: "Sí. OxyPlanner cruza la disponibilidad de técnicos, el stock de repuestos y la criticidad de cada equipo para generar un plan semanal ejecutable con los recursos reales disponibles. Se adaptó a esta planta con 3 líneas de producción continua y más de 600 activos críticos.",
+      },
+      {
+        question: "¿Cuánto tiempo tarda en verse el retorno de inversión?",
+        answer: "Esta planta obtuvo un ROI de 3.2x en el primer año. Los primeros resultados visibles (reducción de fallas, mejora en cumplimiento) se vieron en las primeras 4 semanas, con mejora continua sostenida durante los 4 meses siguientes.",
+      },
+    ],
     relatedSlugs: ["mineria-tiempo-paro", "alimentos-trazabilidad"],
   },
 }
 
 // Placeholder for related case studies (shown at bottom)
 const allCaseStudies = [
+  {
+    slug: "amcs-digitalizacion-mantenimiento",
+    title: "De la intuición a los datos: cómo AMCS transformó su mantenimiento industrial",
+    industry: "Metalmecánica",
+    tag: "CASO DE ÉXITO",
+  },
   {
     slug: "metalmecanica-cumplimiento-preventivo",
     title: "Cómo una planta metalmecánica pasó del 42% al 93% de cumplimiento preventivo",
@@ -96,9 +204,11 @@ interface CaseStudy {
   heroGradient: string
   contents: { id: string; label: string }[]
   summary: string[]
+  heroQuote?: { text: string; author: string; role: string }
   impactMetrics: { value: string; label: string; sub: string }[]
-  whatChanged: { heading: string; body: string }[]
+  whatChanged: { heading: string; body: string; quote?: { text: string; author: string; role: string } }[]
   howWeDidIt: { step: string; title: string; body: string }[]
+  faq?: { question: string; answer: string }[]
   relatedSlugs: string[]
 }
 
@@ -211,6 +321,27 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
 
   return (
     <div className="bg-white min-h-screen">
+      {/* ── FAQ Schema (AEO/GEO) ── */}
+      {study.faq && study.faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": study.faq.map((item) => ({
+                "@type": "Question",
+                "name": item.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": item.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
+
       {/* ── Hero ── */}
       <section className="pt-32 pb-20 overflow-hidden relative" style={{ background: "#0A2434" }}>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -247,7 +378,7 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
               </h1>
 
               {/* Metadata */}
-              <div className="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 border-t border-white/10 pt-8">
                 {/* Col 1: Industria + País */}
                 <div className="flex flex-col gap-5">
                   <div>
@@ -333,12 +464,21 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
           {/* Main content */}
           <div className="min-w-0">
 
-            {/* ── Resumen ejecutivo ── */}
-            <ContentSection id="resumen" label="Resumen ejecutivo">
+            {/* ── Resumen ── */}
+            <ContentSection id="resumen" label="Resumen">
               <div className="space-y-5">
                 {study.summary.map((p, i) => (
                   <p key={i} className="text-gray-600 leading-relaxed text-[1.05rem]">{p}</p>
                 ))}
+                {study.heroQuote && (
+                  <blockquote className="mt-8 rounded-2xl p-7" style={{ background: "#f8f9ff", borderLeft: "4px solid #4361ee" }}>
+                    <p className="text-gray-700 italic leading-relaxed text-[1.05rem] mb-4">"{study.heroQuote.text}"</p>
+                    <footer>
+                      <span className="text-sm font-semibold text-gray-900">{study.heroQuote.author}</span>
+                      <span className="text-sm text-gray-400 ml-2">{study.heroQuote.role}</span>
+                    </footer>
+                  </blockquote>
+                )}
               </div>
             </ContentSection>
 
@@ -358,6 +498,15 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
                   <div key={i}>
                     <h3 className="text-gray-900 font-semibold text-lg mb-3">{s.heading}</h3>
                     <p className="text-gray-600 leading-relaxed">{s.body}</p>
+                    {s.quote && (
+                      <blockquote className="mt-5 rounded-2xl p-6" style={{ background: "#f8f9ff", borderLeft: "4px solid #4361ee" }}>
+                        <p className="text-gray-700 italic leading-relaxed mb-3">"{s.quote.text}"</p>
+                        <footer>
+                          <span className="text-sm font-semibold text-gray-900">{s.quote.author}</span>
+                          <span className="text-sm text-gray-400 ml-2">{s.quote.role}</span>
+                        </footer>
+                      </blockquote>
+                    )}
                   </div>
                 ))}
               </div>
@@ -372,9 +521,16 @@ export default function CaseStudyPage({ params }: { params: Promise<{ slug: stri
               </div>
             </ContentSection>
 
+            {/* ── FAQ ── */}
+            {study.faq && study.faq.length > 0 && (
+              <ContentSection id="faq" label="Preguntas frecuentes">
+                <FaqAccordion items={study.faq} />
+              </ContentSection>
+            )}
+
             {/* ── CTA inline ── */}
             <div
-              className="rounded-3xl p-10 mt-16 text-center"
+              className="rounded-3xl p-6 md:p-10 mt-16 text-center"
               style={{ background: "linear-gradient(135deg, #0A2434 0%, #122D87 100%)" }}
             >
               <p className="text-white/60 text-sm font-semibold uppercase tracking-widest mb-3">¿Tu planta tiene los mismos desafíos?</p>
@@ -470,6 +626,38 @@ function StepCard({ step, title, body }: { step: string; title: string; body: st
         <h4 className="text-gray-900 font-semibold mb-2">{title}</h4>
         <p className="text-gray-600 text-sm leading-relaxed">{body}</p>
       </div>
+    </div>
+  )
+}
+
+function FaqAccordion({ items }: { items: { question: string; answer: string }[] }) {
+  const [open, setOpen] = useState<number | null>(null)
+  return (
+    <div className="space-y-3">
+      {items.map((item, i) => (
+        <div
+          key={i}
+          className="rounded-2xl border overflow-hidden transition-all"
+          style={{ borderColor: open === i ? "#c7d2fe" : "#e5e7eb" }}
+        >
+          <button
+            onClick={() => setOpen(open === i ? null : i)}
+            className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+            style={{ background: open === i ? "#f8f9ff" : "white" }}
+          >
+            <span className="font-semibold text-gray-900 text-sm leading-snug">{item.question}</span>
+            <ChevronDown
+              className="flex-shrink-0 w-4 h-4 transition-transform duration-300"
+              style={{ color: "#4361ee", transform: open === i ? "rotate(180deg)" : "rotate(0deg)" }}
+            />
+          </button>
+          {open === i && (
+            <div className="px-6 pb-5" style={{ background: "#f8f9ff" }}>
+              <p className="text-gray-600 text-sm leading-relaxed">{item.answer}</p>
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   )
 }

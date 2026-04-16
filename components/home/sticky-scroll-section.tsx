@@ -406,10 +406,10 @@ export function StickyScrollSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="py-10 lg:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 lg:mb-16">
           <span className="inline-block text-xs font-semibold text-[#122D87] uppercase tracking-widest mb-4">
             POR QUÉ OXYGEN
           </span>
@@ -454,11 +454,11 @@ export function StickyScrollSection() {
                 ref={(el) => { textBlockRefs.current[index] = el }}
                 className="lg:min-h-[55vh] flex items-center"
               >
-                <div className={`transition-opacity duration-500 w-full ${
-                  activeIndex === index ? "opacity-100" : "lg:opacity-35"
-                }`}>
+                <div className={`transition-opacity duration-500 w-full py-8 lg:py-0 ${
+                  index < features.length - 1 ? "border-b border-gray-100 lg:border-0 mb-2 lg:mb-0" : ""
+                } ${activeIndex === index ? "opacity-100" : "lg:opacity-35"}`}>
                   {/* Mobile Mockup */}
-                  <div className="lg:hidden aspect-video rounded-xl overflow-hidden border border-[#e0e7ff] shadow-sm mb-6 relative">
+                  <div className="lg:hidden aspect-[4/3] rounded-xl overflow-hidden border border-[#e0e7ff] shadow-sm mb-6 relative">
                     {(() => { const M = MOCKUPS[index]; return <M /> })()}
                   </div>
 

@@ -1,79 +1,91 @@
-import type { MetadataRoute } from "next"
+import { MetadataRoute } from "next"
+
+const BASE_URL = "https://oxygen.tech"
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://oxygen.tech"
+  const lastModified = new Date()
 
-  // Páginas estáticas principales
-  const staticPages = [
-    "",
-    "/nosotros",
-    "/productos",
-    "/plataforma",
-    "/oxypulse",
-    "/oxyplanner",
-    "/advisory",
-    "/recursos",
-    "/casos",
+  // Páginas estáticas
+  const staticPages: MetadataRoute.Sitemap = [
+    {
+      url: BASE_URL,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 1.0,
+    },
+    {
+      url: `${BASE_URL}/nosotros`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/advisory`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/plataforma`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/productos`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/soluciones`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/casos`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/recursos`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    },
+    {
+      url: `${BASE_URL}/oxyplanner`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/oxypulse`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${BASE_URL}/politica-de-privacidad`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/terminos-y-condiciones`,
+      lastModified,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ]
 
-  // Industrias para soluciones
-  const industries = [
-    "metalmecanica",
-    "alimentos-bebidas",
-    "mineria",
-    "logistica",
-    "forestal",
-    "agricola",
-    "construccion",
-    "energia",
-    "pesquero-acuicultura",
-    "manufacturera",
-    "automotriz",
-    "retail-facilities",
-  ]
-
-  // Blog posts
-  const blogPosts = [
-    "preparando-operaciones-manufactura-ia",
-    "plan-mantenimiento-8-pasos",
-    "kpis-mantenimiento-industrial",
-    "mantenimiento-predictivo-vs-preventivo",
-  ]
-
-  // Casos de éxito
-  const cases = [
-    "metalmecanica-cumplimiento-preventivo",
-    "alimentos-reduccion-fallas",
-    "mineria-optimizacion-flota",
-  ]
-
-  const staticEntries: MetadataRoute.Sitemap = staticPages.map((path) => ({
-    url: `${baseUrl}${path}`,
-    lastModified: new Date(),
-    changeFrequency: path === "" ? "weekly" : "monthly",
-    priority: path === "" ? 1 : 0.8,
-  }))
-
-  const industryEntries: MetadataRoute.Sitemap = industries.map((industry) => ({
-    url: `${baseUrl}/soluciones/${industry}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }))
-
-  const blogEntries: MetadataRoute.Sitemap = blogPosts.map((slug) => ({
-    url: `${baseUrl}/blog/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.6,
-  }))
-
-  const caseEntries: MetadataRoute.Sitemap = cases.map((slug) => ({
-    url: `${baseUrl}/casos/${slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }))
-
-  return [...staticEntries, ...industryEntries, ...blogEntries, ...caseEntries]
+  return staticPages
 }
