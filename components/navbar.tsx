@@ -70,7 +70,7 @@ export function Navbar() {
           href="/oxyplanner"
           className="absolute right-6 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#122D87]/80 hover:text-[#122D87] flex items-center gap-1 transition-colors"
         >
-          Conocer más →
+          <span className="hidden sm:inline">Conocer más </span>→
         </Link>
       </div>
 
