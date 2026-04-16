@@ -47,7 +47,6 @@ const industries = {
       { value: "+93%", label: "Cumplimiento preventivo" },
       { value: "38 min", label: "Tiempo de resp. OT" },
       { value: "−61%", label: "Fallas no planificadas" },
-      { value: "3.2×", label: "ROI primer año" },
     ],
     quote: "Tenía 60 equipos sin historial y el mantenimiento dependía de una sola persona. Con OxyPulse organizamos todo en semanas: planes preventivos, historial por máquina y costo real de cada activo.",
     author: "Jorge Huenul",
@@ -328,7 +327,6 @@ const industries = {
       { value: ">88%", label: "Cumplimiento preventivo" },
       { value: "−55%", label: "Fallas no planificadas" },
       { value: "100%", label: "Revisiones al día" },
-      { value: "2.8×", label: "ROI primer año" },
     ],
     quote: "",
     author: "",
@@ -478,7 +476,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−58%", label: "Fallas no planificadas" },
       { value: "+12%", label: "OEE de línea" },
-      { value: "3×", label: "ROI primer año" },
     ],
     quote: "Producíamos con mantenimiento 100% correctivo. Con OxyPulse implementamos preventivos en 3 semanas, el OEE de la línea principal subió 11 puntos en 90 días y por primera vez tenemos datos reales.",
     author: "Daniela Rojas",
@@ -826,7 +823,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
     <div className="min-h-screen bg-white">
       <SectionNav showPlanner={industria === "metalmecanica"} />
 
-      {/* ── HERO ───────────�����─────────────────── */}
+      {/* ── HERO ───────────�������─────────────────── */}
       <section
         ref={heroRevealRef as React.RefObject<HTMLElement>}
         className="relative overflow-hidden pt-24 pb-16"
