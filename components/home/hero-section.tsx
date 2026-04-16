@@ -120,7 +120,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subtítulo */}
-        <p className="mt-8 text-lg sm:text-xl text-white/70 max-w-xl mx-auto">
+        <p className="mt-8 text-base sm:text-xl text-white/70 max-w-xl mx-auto">
           La plataforma de Oxygen ayuda a equipos industriales en LATAM a planificar, priorizar y decidir con datos reales.
         </p>
 
