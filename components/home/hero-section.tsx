@@ -86,13 +86,12 @@ export function HeroSection() {
         <h1
           className="font-bold"
           style={{
-            fontSize: "clamp(2.8rem, 7.5vw, 5.2rem)",
             lineHeight: 1.05,
             letterSpacing: "-0.04em",
           }}
         >
           {/* Línea 1 */}
-          <span className="block relative" style={{ color: "rgba(255,255,255,0.95)" }}>
+          <span className="block relative" style={{ color: "rgba(255,255,255,0.95)", fontSize: "clamp(2.2rem, 5.5vw, 4.2rem)" }}>
             IA industrial para
             <span
               className="hero-sweep-overlay"
@@ -105,7 +104,7 @@ export function HeroSection() {
           <span
             className="block"
             style={{
-              fontSize: "clamp(2.4rem, 6.2vw, 4.8rem)",
+              fontSize: "clamp(2rem, 5vw, 4rem)",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0px)" : "translateY(12px)",
               transition: "opacity 0.4s ease, transform 0.4s ease",
