@@ -294,8 +294,8 @@ const industries = {
     name: "Construcción",
     chip: "Soluciones para la industria de la Construcción",
     subTypes: ["Constructoras civiles", "Concesionarias viales", "Obras de infraestructura", "Constructoras inmobiliarias", "Plantas de hormig��n"],
-    accent: "en obra.",
-    headline: ["La maquinaria parada cuesta plazos,"],
+    accent: "",
+    headline: ["La maquinaria parada en obra cuesta plazos"],
     description:
       "OxyPulse centraliza el mantenimiento de tu flota de maquinaria pesada, equipos de obra y sistemas de infraestructura. Menos correctivo, plazos cumplidos y revisiones técnicas al día en todas tus faenas.",
     painPoints: [
