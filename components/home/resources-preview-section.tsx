@@ -5,7 +5,7 @@ const resources = [
   {
     tag: "Caso de éxito",
     industry: "Metalmecánica",
-    tagColor: "#16a34a",
+    tagColor: "#4361ee",
     title: "Cómo una planta metalmecánica pasó del 42% al 93% de cumplimiento preventivo en 4 meses",
     description: "Con OxyPulse y OxyPlanner, el equipo de mantenimiento eliminó el modo reactivo y estableció un sistema de planificación que se cumple.",
     metrics: ["+93% cumplimiento", "-61% fallas", "3.2x ROI"],
@@ -25,7 +25,7 @@ const resources = [
   {
     tag: "Guía",
     industry: "Mantenimiento",
-    tagColor: "#ea580c",
+    tagColor: "#4361ee",
     title: "Tu plan de mantenimiento en 8 pasos",
     description: "Una guía práctica para estructurar un plan de mantenimiento preventivo que tu equipo realmente cumpla.",
     metrics: ["8 pasos", "Preventivo", "Práctico"],
