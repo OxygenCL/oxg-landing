@@ -86,7 +86,7 @@ export function HeroSection() {
         <h1
           className="font-bold"
           style={{
-            fontSize: "clamp(2.8rem, 7.5vw, 6.5rem)",
+            fontSize: "clamp(2.8rem, 7.5vw, 5.2rem)",
             lineHeight: 1.05,
             letterSpacing: "-0.04em",
           }}
