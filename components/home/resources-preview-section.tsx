@@ -3,26 +3,6 @@ import { ArrowRight } from "lucide-react"
 
 const resources = [
   {
-    tag: "Artículo",
-    industry: "Investigación",
-    tagColor: "#4361ee",
-    title: "Oxygen reconocido por Gartner en dos publicaciones de investigación",
-    description: "Oxygen figura entre las plataformas industriales destacadas por Gartner en mantenimiento predictivo y planificación de producción.",
-    metrics: ["+Software industrial", "CMMS & APS", "LATAM"],
-    href: "/recursos",
-    cta: "Leer artículo",
-  },
-  {
-    tag: "Caso de éxito",
-    industry: "Metalmecánica",
-    tagColor: "#8b5cf6",
-    title: "Cómo Softys alcanzó el 95% de cumplimiento preventivo en 90 días",
-    description: "El equipo eliminó el modo reactivo y estableció un sistema de planificación que se cumple.",
-    metrics: ["+95% cumplimiento", "-61% fallas", "3.2x ROI"],
-    href: "/recursos",
-    cta: "Leer caso completo",
-  },
-  {
     tag: "Noticias",
     industry: "Plataforma",
     tagColor: "#0ea5e9",
