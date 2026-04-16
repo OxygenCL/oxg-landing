@@ -12,7 +12,7 @@ const products = [
 ]
 
 const industries = [
-  { name: "Metalmecánica",         href: "/soluciones/metalmecanico", icon: Settings2    },
+  { name: "Metalmecánica",         href: "/soluciones/metalmecanica", icon: Settings2    },
   { name: "Alimentos y Bebidas",   href: "/soluciones/alimentos",     icon: Sandwich     },
   { name: "Minería",               href: "/soluciones/mineria",       icon: HardHat      },
   { name: "Logística",             href: "/soluciones/logistica",     icon: Truck        },

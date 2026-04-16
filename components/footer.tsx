@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 const industrias = [
-  { name: "Metalmecánica",          href: "/soluciones/metalmecanico" },
+  { name: "Metalmecánica",          href: "/soluciones/metalmecanica" },
   { name: "Alimentos y Bebidas",    href: "/soluciones/alimentos"     },
   { name: "Minería",                href: "/soluciones/mineria"       },
   { name: "Logística",              href: "/soluciones/logistica"     },

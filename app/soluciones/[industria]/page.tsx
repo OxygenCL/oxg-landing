@@ -9,7 +9,7 @@ import { ArrowRight, ChevronRight, Check, BarChart2, Calendar, Zap, Shield, User
    INDUSTRY DATA
 ───────────────────────────────────────────── */
 const industries = {
-  metalmecanico: {
+  metalmecanica: {
     name: "Metalmecánico",
     chip: "Soluciones para la industria Metalmecánica",
     subTypes: ["Talleres CNC", "Maestranzas", "Estructuras metálicas", "Herrería industrial", "Conformado de metales"],
@@ -101,7 +101,7 @@ const industries = {
     quote: "En alimentos no puedes improvisar. Con OxyPulse tenemos el historial completo de cada equipo y el calendario de preventivos al día. Ya no hay sorpresas.",
     author: "Walter Aguirre",
     role: "Gerente de Mantenimiento",
-    otherLinks: [{ slug: "metalmecanico", name: "Metalmecánico" }, { slug: "mineria", name: "Minería" }, { slug: "logistica", name: "Logística" }, { slug: "forestal", name: "Forestal" }],
+    otherLinks: [{ slug: "metalmecanica", name: "Metalmecánico" }, { slug: "mineria", name: "Minería" }, { slug: "logistica", name: "Logística" }, { slug: "forestal", name: "Forestal" }],
   },
   mineria: {
     name: "Minería",
@@ -145,7 +145,7 @@ const industries = {
     quote: "En minería, cada hora de un camión parado son miles de dólares. Con OxyPulse por primera vez tenemos el historial de cada activo y los preventivos al día sin depender de planillas.",
     author: "Equipo de Mantenimiento",
     role: "Planta Minera",
-    otherLinks: [{ slug: "metalmecanico", name: "Metalmecánico" }, { slug: "alimentos", name: "Alimentos y Bebidas" }, { slug: "logistica", name: "Logística" }, { slug: "forestal", name: "Forestal" }],
+    otherLinks: [{ slug: "metalmecanica", name: "Metalmecánico" }, { slug: "alimentos", name: "Alimentos y Bebidas" }, { slug: "logistica", name: "Logística" }, { slug: "forestal", name: "Forestal" }],
   },
   logistica: {
     name: "Logística",
@@ -189,7 +189,7 @@ const industries = {
     quote: "Antes gestionábamos 80 camiones con una planilla por base. Con OxyPulse tenemos todo centralizado: preventivos al día, alertas de vencimiento y el historial de cada unidad en un clic.",
     author: "Rodrigo Sepúlveda",
     role: "Jefe de Mantenimiento de Flota",
-    otherLinks: [{ slug: "metalmecanico", name: "Metalmecánico" }, { slug: "mineria", name: "Minería" }, { slug: "alimentos", name: "Alimentos y Bebidas" }, { slug: "forestal", name: "Forestal" }],
+    otherLinks: [{ slug: "metalmecanica", name: "Metalmecánico" }, { slug: "mineria", name: "Minería" }, { slug: "alimentos", name: "Alimentos y Bebidas" }, { slug: "forestal", name: "Forestal" }],
   },
   forestal: {
     name: "Forestal",
@@ -235,7 +235,7 @@ const industries = {
     author: "Felipe Contreras",
     role: "Superintendente de Mantenimiento",
     otherLinks: [
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "mineria", name: "Minería" },
       { slug: "alimentos", name: "Alimentos y Bebidas" },
       { slug: "logistica", name: "Logística" },
@@ -284,7 +284,7 @@ const industries = {
     author: "Cristián Morales",
     role: "Jefe de Maquinaria Agrícola",
     otherLinks: [
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "mineria", name: "Minería" },
       { slug: "alimentos", name: "Alimentos y Bebidas" },
       { slug: "logistica", name: "Logística" },
@@ -293,7 +293,7 @@ const industries = {
   construccion: {
     name: "Construcción",
     chip: "Soluciones para la industria de la Construcción",
-    subTypes: ["Constructoras civiles", "Concesionarias viales", "Obras de infraestructura", "Constructoras inmobiliarias", "Plantas de hormigón"],
+    subTypes: ["Constructoras civiles", "Concesionarias viales", "Obras de infraestructura", "Constructoras inmobiliarias", "Plantas de hormig��n"],
     accent: "en obra.",
     headline: ["La maquinaria parada cuesta plazos,"],
     description:
@@ -334,7 +334,7 @@ const industries = {
     author: "Marcelo Araya",
     role: "Jefe de Equipos y Maquinaria",
     otherLinks: [
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "mineria", name: "Minería" },
       { slug: "energia", name: "Energía" },
       { slug: "manufactura", name: "Manufacturera" },
@@ -484,7 +484,7 @@ const industries = {
     author: "Daniela Rojas",
     role: "Jefa de Mantenimiento Industrial",
     otherLinks: [
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "automotriz", name: "Automotriz" },
       { slug: "alimentos", name: "Alimentos y Bebidas" },
       { slug: "construccion", name: "Construcción" },
@@ -537,7 +537,7 @@ const industries = {
       { slug: "logistica", name: "Logística" },
       { slug: "construccion", name: "Construcción" },
       { slug: "manufactura", name: "Manufacturera" },
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
     ],
   },
   retail: {
@@ -824,7 +824,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
 
   return (
     <div className="min-h-screen bg-white">
-      <SectionNav showPlanner={industria === "metalmecanico"} />
+      <SectionNav showPlanner={industria === "metalmecanica"} />
 
       {/* ── HERO ─────────────────────────────── */}
       <section
@@ -1044,7 +1044,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       </section>
 
       {/* ── OXYPLANNER FEATURE ───────────────── */}
-      {industria === "metalmecanico" && <section
+      {industria === "metalmecanica" && <section
         id="section-oxyplanner"
         ref={plannerRevealRef as React.RefObject<HTMLElement>}
         className="py-24"

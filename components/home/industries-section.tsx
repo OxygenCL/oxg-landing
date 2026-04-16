@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 import { Settings2, Sandwich, HardHat, Truck, TreePine, Wheat, Building2, Zap, Fish, Factory, ShoppingCart } from "lucide-react"
 
 const industries = [
-  { name: "Metalmecánica",          slug: "metalmecanico", icon: Settings2    },
+  { name: "Metalmecánica",          slug: "metalmecanica", icon: Settings2    },
   { name: "Alimentos y Bebidas",    slug: "alimentos",     icon: Sandwich     },
   { name: "Minería",                slug: "mineria",       icon: HardHat      },
   { name: "Logística",              slug: "logistica",     icon: Truck        },
