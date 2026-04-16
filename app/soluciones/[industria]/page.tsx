@@ -94,7 +94,6 @@ const industries = {
     kpis: [
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "<45 min", label: "Resp. ante falla" },
-      { value: "100%", label: "Trazabilidad digital" },
       { value: "−50%", label: "Fallas en temporada" },
     ],
     quote: "En alimentos no puedes improvisar. Con OxyPulse tenemos el historial completo de cada equipo y el calendario de preventivos al día. Ya no hay sorpresas.",
@@ -139,7 +138,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−65%", label: "Fallas no planificadas" },
       { value: "<45 min", label: "Tiempo de resp. OT" },
-      { value: "100%", label: "Trazabilidad multi-turno" },
     ],
     quote: "En minería, cada hora de un camión parado son miles de dólares. Con OxyPulse por primera vez tenemos el historial de cada activo y los preventivos al día sin depender de planillas.",
     author: "Equipo de Mantenimiento",
@@ -183,7 +181,6 @@ const industries = {
       { value: ">95%", label: "Disponibilidad de flota" },
       { value: "−60%", label: "Fallas en ruta" },
       { value: ">88%", label: "Cumplimiento preventivo" },
-      { value: "100%", label: "Visibilidad multi-sitio" },
     ],
     quote: "Antes gestionábamos 80 camiones con una planilla por base. Con OxyPulse tenemos todo centralizado: preventivos al día, alertas de vencimiento y el historial de cada unidad en un clic.",
     author: "Rodrigo Sepúlveda",
@@ -228,7 +225,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−50%", label: "Paradas no planificadas" },
       { value: "+30%", label: "Eficiencia de shutdown" },
-      { value: "100%", label: "Trazabilidad de backlog" },
     ],
     quote: "Antes del shutdown teníamos cientos de trabajos dispersos en correos y planillas. Con OxyPulse el backlog llega ordenado, priorizado y asignado. El shutdown de este año fue el más eficiente en años.",
     author: "Felipe Contreras",
@@ -375,7 +371,6 @@ const industries = {
       { value: ">92%", label: "Cumplimiento preventivo" },
       { value: "−60%", label: "Eventos no planificados" },
       { value: "100%", label: "Trazabilidad digital" },
-      { value: "+25%", label: "Eficiencia de paradas mayores" },
     ],
     quote: "Con activos en cuatro sitios distintos necesitábamos más que planillas. OxyPulse nos dio trazabilidad completa y hoy cada intervención queda registrada, sin depender de carpetas ni archivos locales.",
     author: "Patricio Vega",
@@ -819,7 +814,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
     <div className="min-h-screen bg-white">
       <SectionNav showPlanner={industria === "metalmecanica"} />
 
-      {/* ── HERO ───────────�������─────────────────── */}
+      {/* ── HERO ─────��─────�������─────────────────── */}
       <section
         ref={heroRevealRef as React.RefObject<HTMLElement>}
         className="relative overflow-hidden pt-24 pb-16"
@@ -1118,7 +1113,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
         </div>
       </section>
 
-      {/* ── STATS ────────────────────────────── */}
+      {/* ── STATS ───────────────────────────��── */}
       <section
         id="section-resultados"
         ref={statsRevealRef as React.RefObject<HTMLElement>}
