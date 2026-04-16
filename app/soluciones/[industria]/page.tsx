@@ -826,7 +826,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
     <div className="min-h-screen bg-white">
       <SectionNav showPlanner={industria === "metalmecanica"} />
 
-      {/* ── HERO ───────────���─────────────────── */}
+      {/* ── HERO ───────────�����─────────────────── */}
       <section
         ref={heroRevealRef as React.RefObject<HTMLElement>}
         className="relative overflow-hidden pt-24 pb-16"
@@ -1024,21 +1024,18 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
               <OxyPulseMockup />
               {/* Customer story chip - only for metalmecanica */}
               {industria === "metalmecanica" && (
-                <div className="bg-[#f6f9fc] rounded-2xl border border-gray-200 p-4 flex items-center justify-between">
+                <a href="/casos/metalmecanica-cumplimiento-preventivo" className="bg-[#f6f9fc] rounded-2xl border border-gray-200 p-4 flex items-center justify-between hover:border-[#4361ee]/30 hover:shadow-md transition-all group">
                   <div>
                     <p className="text-xs text-gray-400 mb-1">Historia del cliente</p>
                     <p className="text-sm font-semibold text-[#0a2434]">
-                      Cómo {industry.name} logró +90% cumplimiento preventivo
+                      Cómo AMCS logró +90% cumplimiento preventivo
                     </p>
-                    <a className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-[#4361ee] hover:gap-1.5 transition-all">
-                      Más información <ChevronRight className="w-3 h-3" />
-                    </a>
+                    <span className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-[#4361ee] group-hover:gap-1.5 transition-all">
+                      Ver caso de éxito <ChevronRight className="w-3 h-3" />
+                    </span>
                   </div>
-                  <div className="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl font-black ml-4"
-                    style={{ background: "linear-gradient(135deg, #4361ee, #7c3aed)", color: "white" }}>
-                    O
-                  </div>
-                </div>
+                  <img src="/logos-web/14.png" alt="AMCS" className="w-14 h-14 rounded-xl flex-shrink-0 object-contain ml-4 bg-white p-1" />
+                </a>
               )}
             </div>
           </div>
