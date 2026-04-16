@@ -293,7 +293,7 @@ const industries = {
   construccion: {
     name: "Construcción",
     chip: "Soluciones para la industria de la Construcción",
-    subTypes: ["Constructoras civiles", "Concesionarias viales", "Obras de infraestructura", "Constructoras inmobiliarias", "Plantas de hormig��n"],
+    subTypes: ["Constructoras civiles", "Concesionarias viales", "Obras de infraestructura", "Constructoras inmobiliarias", "Plantas de Hormigón"],
     accent: "cuesta plazos.",
     headline: ["La maquinaria parada en obra"],
     description:
