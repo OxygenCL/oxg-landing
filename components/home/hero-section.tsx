@@ -105,6 +105,7 @@ export function HeroSection() {
           <span
             className="block"
             style={{
+              fontSize: "clamp(2.4rem, 6.2vw, 4.8rem)",
               opacity: visible ? 1 : 0,
               transform: visible ? "translateY(0px)" : "translateY(12px)",
               transition: "opacity 0.4s ease, transform 0.4s ease",
