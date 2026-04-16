@@ -74,6 +74,7 @@ const articles = [
     title: "Qué es un software de mantenimiento",
     date: "15 Ene 2026",
     description: "Todo lo que necesitas saber sobre los sistemas CMMS y cómo pueden transformar la gestión de mantenimiento en tu planta.",
+    available: false,
   },
   {
     type: "articulo",
@@ -82,6 +83,7 @@ const articles = [
     title: "Tu plan de mantenimiento en 8 pasos",
     date: "10 Ene 2026",
     description: "Una guía práctica para estructurar un plan de mantenimiento preventivo que tu equipo realmente cumpla.",
+    available: false,
   },
   {
     type: "articulo",
@@ -90,6 +92,7 @@ const articles = [
     title: "Ventajas de utilizar un CMMS",
     date: "05 Ene 2026",
     description: "Por qué las plantas industriales líderes abandonaron las planillas y adoptaron un CMMS para gestionar sus activos.",
+    available: false,
   },
   {
     type: "articulo",
@@ -98,6 +101,7 @@ const articles = [
     title: "Olvídate del Excel en mantenimiento",
     date: "28 Dic 2025",
     description: "Cómo dejar de depender de hojas de cálculo y pasar a una gestión de mantenimiento con trazabilidad real.",
+    available: false,
   },
   {
     type: "articulo",
@@ -106,6 +110,7 @@ const articles = [
     title: "Mantenimiento predictivo: qué es y cómo implementarlo",
     date: "20 Dic 2025",
     description: "Diferencias entre mantenimiento correctivo, preventivo y predictivo, y cómo dar el salto con datos e inteligencia artificial.",
+    available: false,
   },
   {
     type: "articulo",
@@ -114,6 +119,7 @@ const articles = [
     title: "Glosario de mantenimiento industrial",
     date: "10 Dic 2025",
     description: "Los términos esenciales que todo gestor de mantenimiento debe conocer: OEE, MTBF, MTTR, backlog y más.",
+    available: false,
   },
 ]
 
@@ -217,9 +223,13 @@ function ArticleCard({ a, index }: { a: typeof articles[0]; index: number }) {
           {a.title}
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed mb-6">{a.description}</p>
-        <Link href={a.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4361ee] hover:gap-2.5 transition-all">
-          Leer más <ArrowRight size={13} />
-        </Link>
+        {a.available === false ? (
+          <span className="text-sm text-gray-400">Próximamente disponible</span>
+        ) : (
+          <Link href={a.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4361ee] hover:gap-2.5 transition-all">
+            Leer más <ArrowRight size={13} />
+          </Link>
+        )}
       </div>
     </div>
   )
