@@ -330,9 +330,9 @@ const industries = {
       { value: "100%", label: "Revisiones al día" },
       { value: "2.8×", label: "ROI primer año" },
     ],
-    quote: "Teníamos la flota de maquinaria en tres faenas distintas y ningún registro centralizado. Con OxyPulse vemos todo desde un panel: preventivos al día, revisiones vigentes y el historial de cada máquina.",
-    author: "Marcelo Araya",
-    role: "Jefe de Equipos y Maquinaria",
+    quote: "",
+    author: "",
+    role: "",
     otherLinks: [
       { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "mineria", name: "Minería" },
