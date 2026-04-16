@@ -10,7 +10,7 @@ import { ArrowRight, ChevronRight, Check, BarChart2, Calendar, Zap, Shield, User
 ───────────────────────────────────────────── */
 const industries = {
   metalmecanica: {
-    name: "Metalmecánico",
+    name: "Metalmecánica",
     chip: "Soluciones para la industria Metalmecánica",
     subTypes: ["Talleres CNC", "Maestranzas", "Estructuras metálicas", "Herrería industrial", "Conformado de metales"],
     accent: "metalmecánica.",
