@@ -33,6 +33,16 @@ const testimonials = [
     slug: "",
     initials: "AO",
   },
+  {
+    quote:
+      "La plataforma mejoró nuestro control del mantenimiento, desde la planificación hasta el seguimiento histórico de intervenciones. Una gestión más ordenada y trazable.",
+    name: "Amanda Valladares",
+    title: "Planificadora de Mantenimiento",
+    company: "GYMSA",
+    logo: "/logos-web/15.png",
+    slug: "",
+    initials: "AV",
+  },
 ]
 
 const DURATION = 6000 // ms per slide
