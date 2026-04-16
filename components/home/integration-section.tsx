@@ -5,7 +5,7 @@ const integrations = [
   "Strumis",
   "SAP",
   "IBM",
-  "Microsoft Dynamics AX",
+  "Microsoft Dynamics",
 ]
 
 export function IntegrationSection() {

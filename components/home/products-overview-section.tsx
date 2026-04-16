@@ -229,7 +229,7 @@ export function ProductsOverviewSection() {
   const cardsP  = Math.max(0, Math.min(1, (p - 0.65) / 0.35))
 
   return (
-    <section id="plataforma" className="py-28 bg-[#f0f4ff] overflow-x-hidden">
+    <section id="plataforma" className="py-28 bg-[#f0f4ff]">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -237,7 +237,7 @@ export function ProductsOverviewSection() {
           <span className="text-xs font-semibold text-[#4361ee] uppercase tracking-widest block mb-4">
             Nuestros Productos
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mx-auto">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 whitespace-nowrap mx-auto">
             3 soluciones, un solo ecosistema.
           </h2>
         </div>

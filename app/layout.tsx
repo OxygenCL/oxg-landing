@@ -7,21 +7,8 @@ import { Footer } from '@/components/footer'
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.oxygen.tech'),
-  title: {
-    default: 'Software de Mantenimiento Industrial con IA | Oxygen',
-    template: '%s | Oxygen',
-  },
-  description: 'OxyPulse y OxyPlanner conectan mantenimiento, producción e inteligencia en plantas industriales de LATAM. Sin reemplazar tu ERP. Operativo en días.',
-  openGraph: {
-    siteName: 'Oxygen',
-    locale: 'es_CL',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    site: '@OxygenTech',
-  },
+  title: 'Oxygen Suite Industrial — CMMS + APS + IA para la industria',
+  description: 'La plataforma industrial que conecta mantenimiento, producción e inteligencia. OxyPulse + OxyPlanner + Advisory para la industria en LATAM. Operativo en días.',
   icons: {
     icon: [
       {

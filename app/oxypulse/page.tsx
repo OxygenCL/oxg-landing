@@ -299,7 +299,7 @@ function KPIMockup() {
                   className="w-full rounded-t"
                   style={{
                     height: `${(values[i] / 100) * 52}px`,
-                    background: i === months.length - 1 ? "linear-gradient(180deg,#4361ee,#1e40af)" : "#e8ecff",
+                    background: i === months.length - 1 ? "linear-gradient(180deg,#4361ee,#7c3aed)" : "#e8ecff",
                   }}
                 />
                 <span className="text-gray-400" style={{ fontSize: 9 }}>{m}</span>
@@ -347,14 +347,14 @@ function StatItem({
   return (
     <div
       ref={ref}
-      className="py-6 px-4 md:py-10 md:px-8 transition-all duration-700"
+      className="py-10 px-8 transition-all duration-700"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "none" : "translateY(18px)",
         transitionDelay: `${delay}ms`,
       }}
     >
-      <p className="font-bold text-gray-900 mb-1 tabular-nums" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2.4rem)" }}>
+      <p className="font-bold text-gray-900 mb-1 tabular-nums" style={{ fontSize: "clamp(1.8rem, 2.5vw, 2.4rem)" }}>
         {prefix}{formatted}{suffix}
       </p>
       <p className="text-gray-800 font-semibold text-sm">{label}</p>
@@ -493,7 +493,7 @@ export default function OxyPulsePage() {
               <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
                 <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.25)" }}>Integra con</p>
                 <div className="flex items-center gap-6 flex-wrap">
-                  {["Tekla", "Strumis", "SAP", "IBM", "Microsoft Dynamics AX"].map(l => (
+                  {["Tekla", "Strumis", "SAP", "IBM", "Microsoft Dynamics"].map(l => (
                     <span key={l} className="text-sm font-bold tracking-wider" style={{ color: "rgba(255,255,255,0.35)" }}>{l}</span>
                   ))}
                 </div>
@@ -577,7 +577,7 @@ export default function OxyPulsePage() {
               { name: "Strumis", color: "#122D87" },
               { name: "SAP", color: "#0070f3" },
               { name: "IBM", color: "#1F70C1" },
-              { name: "Microsoft Dynamics AX", color: "#1e40af" },
+              { name: "Microsoft Dynamics", color: "#7c3aed" },
             ].map((s) => (
               <div
                 key={s.name}
@@ -609,7 +609,7 @@ export default function OxyPulsePage() {
               Contactar con ventas <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
-              href="/casos/amcs-digitalizacion-mantenimiento"
+              href="/casos/metalmecanica-cumplimiento-preventivo"
               className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-gray-700 text-sm border border-gray-200 hover:bg-gray-100 transition-colors"
             >
               Ver caso de éxito de AMCS

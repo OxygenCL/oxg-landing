@@ -9,8 +9,8 @@ import { ArrowRight, ChevronRight, Check, BarChart2, Calendar, Zap, Shield, User
    INDUSTRY DATA
 ───────────────────────────────────────────── */
 const industries = {
-  metalmecanico: {
-    name: "Metalmecánico",
+  metalmecanica: {
+    name: "Metalmecánica",
     chip: "Soluciones para la industria Metalmecánica",
     subTypes: ["Talleres CNC", "Maestranzas", "Estructuras metálicas", "Herrería industrial", "Conformado de metales"],
     accent: "metalmecánica.",
@@ -47,7 +47,6 @@ const industries = {
       { value: "+93%", label: "Cumplimiento preventivo" },
       { value: "38 min", label: "Tiempo de resp. OT" },
       { value: "−61%", label: "Fallas no planificadas" },
-      { value: "3.2×", label: "ROI primer año" },
     ],
     quote: "Tenía 60 equipos sin historial y el mantenimiento dependía de una sola persona. Con OxyPulse organizamos todo en semanas: planes preventivos, historial por máquina y costo real de cada activo.",
     author: "Jorge Huenul",
@@ -95,13 +94,12 @@ const industries = {
     kpis: [
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "<45 min", label: "Resp. ante falla" },
-      { value: "100%", label: "Trazabilidad digital" },
       { value: "−50%", label: "Fallas en temporada" },
     ],
     quote: "En alimentos no puedes improvisar. Con OxyPulse tenemos el historial completo de cada equipo y el calendario de preventivos al día. Ya no hay sorpresas.",
     author: "Walter Aguirre",
     role: "Gerente de Mantenimiento",
-    otherLinks: [{ slug: "metalmecanico", name: "Metalmecánico" }, { slug: "mineria", name: "Minería" }, { slug: "logistica", name: "Logística" }, { slug: "forestal", name: "Forestal" }],
+    otherLinks: [{ slug: "metalmecanica", name: "Metalmecánico" }, { slug: "mineria", name: "Minería" }, { slug: "logistica", name: "Logística" }, { slug: "forestal", name: "Forestal" }],
   },
   mineria: {
     name: "Minería",
@@ -140,12 +138,11 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−65%", label: "Fallas no planificadas" },
       { value: "<45 min", label: "Tiempo de resp. OT" },
-      { value: "100%", label: "Trazabilidad multi-turno" },
     ],
     quote: "En minería, cada hora de un camión parado son miles de dólares. Con OxyPulse por primera vez tenemos el historial de cada activo y los preventivos al día sin depender de planillas.",
     author: "Equipo de Mantenimiento",
     role: "Planta Minera",
-    otherLinks: [{ slug: "metalmecanico", name: "Metalmecánico" }, { slug: "alimentos", name: "Alimentos y Bebidas" }, { slug: "logistica", name: "Logística" }, { slug: "forestal", name: "Forestal" }],
+    otherLinks: [{ slug: "metalmecanica", name: "Metalmecánico" }, { slug: "alimentos", name: "Alimentos y Bebidas" }, { slug: "logistica", name: "Logística" }, { slug: "forestal", name: "Forestal" }],
   },
   logistica: {
     name: "Logística",
@@ -184,12 +181,11 @@ const industries = {
       { value: ">95%", label: "Disponibilidad de flota" },
       { value: "−60%", label: "Fallas en ruta" },
       { value: ">88%", label: "Cumplimiento preventivo" },
-      { value: "100%", label: "Visibilidad multi-sitio" },
     ],
     quote: "Antes gestionábamos 80 camiones con una planilla por base. Con OxyPulse tenemos todo centralizado: preventivos al día, alertas de vencimiento y el historial de cada unidad en un clic.",
     author: "Rodrigo Sepúlveda",
     role: "Jefe de Mantenimiento de Flota",
-    otherLinks: [{ slug: "metalmecanico", name: "Metalmecánico" }, { slug: "mineria", name: "Minería" }, { slug: "alimentos", name: "Alimentos y Bebidas" }, { slug: "forestal", name: "Forestal" }],
+    otherLinks: [{ slug: "metalmecanica", name: "Metalmecánico" }, { slug: "mineria", name: "Minería" }, { slug: "alimentos", name: "Alimentos y Bebidas" }, { slug: "forestal", name: "Forestal" }],
   },
   forestal: {
     name: "Forestal",
@@ -229,13 +225,12 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−50%", label: "Paradas no planificadas" },
       { value: "+30%", label: "Eficiencia de shutdown" },
-      { value: "100%", label: "Trazabilidad de backlog" },
     ],
     quote: "Antes del shutdown teníamos cientos de trabajos dispersos en correos y planillas. Con OxyPulse el backlog llega ordenado, priorizado y asignado. El shutdown de este año fue el más eficiente en años.",
     author: "Felipe Contreras",
     role: "Superintendente de Mantenimiento",
     otherLinks: [
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "mineria", name: "Minería" },
       { slug: "alimentos", name: "Alimentos y Bebidas" },
       { slug: "logistica", name: "Logística" },
@@ -278,13 +273,12 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−60%", label: "Fallas en temporada" },
       { value: "100%", label: "Historial por activo" },
-      { value: "3–5×", label: "ROI vs. reactivo" },
     ],
     quote: "Llegábamos a cada temporada sin saber el estado real de los equipos. Con OxyPulse el mantenimiento mayor se hace en la inter-temporada y cuando empieza la cosecha, sabemos qué tiene cada activo.",
     author: "Cristián Morales",
     role: "Jefe de Maquinaria Agrícola",
     otherLinks: [
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "mineria", name: "Minería" },
       { slug: "alimentos", name: "Alimentos y Bebidas" },
       { slug: "logistica", name: "Logística" },
@@ -293,9 +287,9 @@ const industries = {
   construccion: {
     name: "Construcción",
     chip: "Soluciones para la industria de la Construcción",
-    subTypes: ["Constructoras civiles", "Concesionarias viales", "Obras de infraestructura", "Constructoras inmobiliarias", "Plantas de hormigón"],
-    accent: "en obra.",
-    headline: ["La maquinaria parada cuesta plazos,"],
+    subTypes: ["Constructoras civiles", "Concesionarias viales", "Obras de infraestructura", "Constructoras inmobiliarias", "Plantas de Hormigón"],
+    accent: "cuesta plazos.",
+    headline: ["La maquinaria parada en obra"],
     description:
       "OxyPulse centraliza el mantenimiento de tu flota de maquinaria pesada, equipos de obra y sistemas de infraestructura. Menos correctivo, plazos cumplidos y revisiones técnicas al día en todas tus faenas.",
     painPoints: [
@@ -328,13 +322,12 @@ const industries = {
       { value: ">88%", label: "Cumplimiento preventivo" },
       { value: "−55%", label: "Fallas no planificadas" },
       { value: "100%", label: "Revisiones al día" },
-      { value: "2.8×", label: "ROI primer año" },
     ],
-    quote: "Teníamos la flota de maquinaria en tres faenas distintas y ningún registro centralizado. Con OxyPulse vemos todo desde un panel: preventivos al día, revisiones vigentes y el historial de cada máquina.",
-    author: "Marcelo Araya",
-    role: "Jefe de Equipos y Maquinaria",
+    quote: "",
+    author: "",
+    role: "",
     otherLinks: [
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "mineria", name: "Minería" },
       { slug: "energia", name: "Energía" },
       { slug: "manufactura", name: "Manufacturera" },
@@ -378,7 +371,6 @@ const industries = {
       { value: ">92%", label: "Cumplimiento preventivo" },
       { value: "−60%", label: "Eventos no planificados" },
       { value: "100%", label: "Trazabilidad digital" },
-      { value: "+25%", label: "Eficiencia de paradas mayores" },
     ],
     quote: "Con activos en cuatro sitios distintos necesitábamos más que planillas. OxyPulse nos dio trazabilidad completa y hoy cada intervención queda registrada, sin depender de carpetas ni archivos locales.",
     author: "Patricio Vega",
@@ -428,7 +420,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−65%", label: "Fallas críticas en temporada" },
       { value: "100%", label: "Trazabilidad de activos" },
-      { value: "3×", label: "ROI vs. correctivo" },
     ],
     quote: "En acuicultura no hay segunda oportunidad cuando falla un equipo en cosecha. Con OxyPulse organizamos los preventivos en la inter-temporada y llegamos con todos los activos críticos revisados.",
     author: "Álvaro Núñez",
@@ -478,13 +469,12 @@ const industries = {
       { value: ">90%", label: "Cumplimiento preventivo" },
       { value: "−58%", label: "Fallas no planificadas" },
       { value: "+12%", label: "OEE de línea" },
-      { value: "3×", label: "ROI primer año" },
     ],
     quote: "Producíamos con mantenimiento 100% correctivo. Con OxyPulse implementamos preventivos en 3 semanas, el OEE de la línea principal subió 11 puntos en 90 días y por primera vez tenemos datos reales.",
     author: "Daniela Rojas",
     role: "Jefa de Mantenimiento Industrial",
     otherLinks: [
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
       { slug: "automotriz", name: "Automotriz" },
       { slug: "alimentos", name: "Alimentos y Bebidas" },
       { slug: "construccion", name: "Construcción" },
@@ -528,7 +518,6 @@ const industries = {
       { value: ">90%", label: "Cumplimiento de PM" },
       { value: "100%", label: "Documentos vigentes" },
       { value: "−55%", label: "Servicios de emergencia" },
-      { value: "3×", label: "ROI vs. correctivo" },
     ],
     quote: "Tenía 80 camionetas en cuatro regiones y el historial de cada una en planillas distintas. Con OxyPulse centralizamos todo: el PM por km se activa solo, las revisiones técnicas no vencen más y los costos por unidad son visibles.",
     author: "Rodrigo Castillo",
@@ -537,7 +526,7 @@ const industries = {
       { slug: "logistica", name: "Logística" },
       { slug: "construccion", name: "Construcción" },
       { slug: "manufactura", name: "Manufacturera" },
-      { slug: "metalmecanico", name: "Metalmecánico" },
+      { slug: "metalmecanica", name: "Metalmecánico" },
     ],
   },
   retail: {
@@ -578,7 +567,6 @@ const industries = {
       { value: ">88%", label: "Cumplimiento preventivo" },
       { value: "−50%", label: "Emergencias de frío" },
       { value: "100%", label: "Certificaciones vigentes" },
-      { value: "3×", label: "ROI vs. correctivo" },
     ],
     quote: "Teníamos 40 locales con mantenimiento 100% reactivo. Con OxyPulse centralizamos todo: cada contratista registra su trabajo, el equipo de frío tiene preventivos reales y el tablero muestra el estado de cada tienda.",
     author: "Andrea Méndez",
@@ -824,9 +812,9 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
 
   return (
     <div className="min-h-screen bg-white">
-      <SectionNav showPlanner={industria === "metalmecanico"} />
+      <SectionNav showPlanner={industria === "metalmecanica"} />
 
-      {/* ── HERO ─────────────────────────────── */}
+      {/* ── HERO ─────��─────�������─────────────────── */}
       <section
         ref={heroRevealRef as React.RefObject<HTMLElement>}
         className="relative overflow-hidden pt-24 pb-16"
@@ -834,7 +822,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
       >
         {/* Gradient blob */}
         <div className="absolute -top-32 right-0 w-[700px] h-[700px] opacity-60 pointer-events-none"
-          style={{ background: "radial-gradient(ellipse at 70% 30%, #4361ee33 0%, #1e40af22 40%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(ellipse at 70% 30%, #4361ee33 0%, #7c3aed22 40%, transparent 70%)" }} />
         <div className="absolute top-20 right-40 w-[400px] h-[400px] opacity-40 pointer-events-none"
           style={{ background: "radial-gradient(ellipse, #06b6d433 0%, transparent 70%)" }} />
 
@@ -1022,29 +1010,28 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
               style={{ opacity: pulseRevealVisible ? 1 : 0, transform: pulseRevealVisible ? "none" : "translateX(24px)", transition: "opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s" }}
             >
               <OxyPulseMockup />
-              {/* Customer story chip */}
-              <div className="bg-[#f6f9fc] rounded-2xl border border-gray-200 p-4 flex items-center justify-between">
-                <div>
-                  <p className="text-xs text-gray-400 mb-1">Historia del cliente</p>
-                  <p className="text-sm font-semibold text-[#0a2434]">
-                    Cómo {industry.name} logró +90% cumplimiento preventivo
-                  </p>
-                  <a className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-[#4361ee] hover:gap-1.5 transition-all">
-                    Más información <ChevronRight className="w-3 h-3" />
-                  </a>
-                </div>
-                <div className="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl font-black ml-4"
-                  style={{ background: "linear-gradient(135deg, #4361ee, #1e40af)", color: "white" }}>
-                  O
-                </div>
-              </div>
+              {/* Customer story chip - only for metalmecanica */}
+              {industria === "metalmecanica" && (
+                <a href="/casos/metalmecanica-cumplimiento-preventivo" className="bg-[#f6f9fc] rounded-2xl border border-gray-200 p-4 flex items-center justify-between hover:border-[#4361ee]/30 hover:shadow-md transition-all group">
+                  <div>
+                    <p className="text-xs text-gray-400 mb-1">Historia del cliente</p>
+                    <p className="text-sm font-semibold text-[#0a2434]">
+                      Cómo AMCS logró +90% cumplimiento preventivo
+                    </p>
+                    <span className="inline-flex items-center gap-1 mt-1 text-xs font-semibold text-[#4361ee] group-hover:gap-1.5 transition-all">
+                      Ver caso de éxito <ChevronRight className="w-3 h-3" />
+                    </span>
+                  </div>
+                  <img src="/logos-web/14.png" alt="AMCS" className="w-14 h-14 rounded-xl flex-shrink-0 object-contain ml-4 bg-white p-1" />
+                </a>
+              )}
             </div>
           </div>
         </div>
       </section>
 
       {/* ── OXYPLANNER FEATURE ───────────────── */}
-      {industria === "metalmecanico" && <section
+      {industria === "metalmecanica" && <section
         id="section-oxyplanner"
         ref={plannerRevealRef as React.RefObject<HTMLElement>}
         className="py-24"
@@ -1108,7 +1095,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
               { name: "Strumis", color: "#122D87" },
               { name: "SAP", color: "#0070f3" },
               { name: "IBM", color: "#1F70C1" },
-              { name: "Microsoft Dynamics AX", color: "#1e40af" },
+              { name: "Microsoft Dynamics", color: "#7c3aed" },
               { name: "Hojas de cálculo", color: "#217346" },
             ].map((s) => (
               <div
@@ -1126,7 +1113,7 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
         </div>
       </section>
 
-      {/* ── STATS ────────────────────────────── */}
+      {/* ── STATS ───────────────────────────��── */}
       <section
         id="section-resultados"
         ref={statsRevealRef as React.RefObject<HTMLElement>}
@@ -1141,11 +1128,11 @@ export default function IndustryPage({ params }: { params: Promise<{ industria: 
               Resultados típicos en {industry.name}
             </h2>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-gray-200 rounded-2xl overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-gray-200 rounded-2xl overflow-hidden">
             {industry.kpis.map((k, i) => (
               <div
                 key={i}
-                className="bg-white p-5 sm:p-8 text-center"
+                className="bg-white p-8 text-center"
                 style={{ opacity: statsRevealVisible ? 1 : 0, transition: `opacity 0.5s ease ${i * 100}ms` }}
               >
                 <div className="text-4xl sm:text-5xl font-extrabold mb-2" style={{ color: "#4361ee" }}>

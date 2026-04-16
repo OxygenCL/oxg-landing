@@ -558,10 +558,10 @@ function StatItem({
   return (
     <div
       ref={ref}
-      className="py-6 px-4 md:py-10 md:px-8 transition-all duration-700"
+      className="py-10 px-8 transition-all duration-700"
       style={{ opacity: visible ? 1 : 0, transform: visible ? "none" : "translateY(18px)", transitionDelay: `${delay}ms` }}
     >
-      <p className="font-bold text-gray-900 mb-1 tabular-nums" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2.4rem)" }}>
+      <p className="font-bold text-gray-900 mb-1 tabular-nums" style={{ fontSize: "clamp(1.8rem, 2.5vw, 2.4rem)" }}>
         {prefix}{formatted}{suffix}
       </p>
       <p className="text-gray-800 font-semibold text-sm">{label}</p>
@@ -696,7 +696,7 @@ export default function OxyPlannerPage() {
               <div className="mt-10 pt-8" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
                 <p className="text-xs font-bold uppercase tracking-widest mb-4" style={{ color: "rgba(255,255,255,0.25)" }}>Compatible con</p>
                 <div className="flex items-center gap-6 flex-wrap">
-                  {["Tekla", "Strumis", "SAP", "IBM", "Microsoft Dynamics AX"].map(l => (
+                  {["Tekla", "Strumis", "SAP", "IBM", "Microsoft Dynamics"].map(l => (
                     <span key={l} className="text-sm font-bold tracking-wider" style={{ color: "rgba(255,255,255,0.35)" }}>{l}</span>
                   ))}
                 </div>
@@ -939,30 +939,7 @@ export default function OxyPlannerPage() {
         </div>
       </section>
 
-      {/* ── 8. QUOTE ── */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg, #0A2434 0%, #122D87 100%)" }}>
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest mb-10" style={{ color: "rgba(255,255,255,0.3)" }}>
-            Lo que dicen nuestros clientes
-          </p>
-          <blockquote className="font-semibold text-white leading-relaxed mb-8" style={{ fontSize: "clamp(1.2rem, 2vw, 1.7rem)" }}>
-            &quot;Antes tardábamos tres horas los lunes para armar el plan de la semana. Con OxyPlanner son 15 minutos. Y cuando algo falla en planta, el sistema ya nos dice cómo reorganizarnos.&quot;
-          </blockquote>
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{ background: "rgba(255,255,255,0.12)" }}>
-              MC
-            </div>
-            <div className="text-left">
-              <p className="text-white text-sm font-semibold">Marcela Contreras</p>
-              <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-                Jefa de Producción — Planta de Alimentos, Colombia
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9. INTEGRATIONS ── */}
+      {/* ── 8. INTEGRATIONS ── */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#4361ee" }}>INTEGRACIONES</span>
@@ -976,7 +953,7 @@ export default function OxyPlannerPage() {
               { name: "Strumis", color: "#122D87" },
               { name: "SAP", color: "#0070f3" },
               { name: "IBM", color: "#1F70C1" },
-              { name: "Microsoft Dynamics AX", color: "#1e40af" },
+              { name: "Microsoft Dynamics", color: "#7c3aed" },
               { name: "OxyPulse", color: "#4361ee" },
             ].map((s) => (
               <div

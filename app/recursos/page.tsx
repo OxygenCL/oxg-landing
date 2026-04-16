@@ -17,17 +17,6 @@ const filterParamMap: Record<string, string> = {
 const cases = [
   {
     type: "caso",
-    slug: "amcs-digitalizacion-mantenimiento",
-    tag: "CASO DE ÉXITO",
-    industry: "Metalmecánica",
-    title: "De la intuición a los datos: cómo AMCS transformó su mantenimiento industrial",
-    summary: "Con OxyPulse, AMCS pasó de Excel y memoria a trazabilidad total. Las órdenes de trabajo subieron un 152% y el cumplimiento del plan preventivo mejoró un 31.4%.",
-    metrics: ["+152% MOs", "+31.4% preventivo", "100% trazabilidad"],
-    available: true,
-    date: "2 Feb 2026",
-  },
-  {
-    type: "caso",
     slug: "metalmecanica-cumplimiento-preventivo",
     tag: "CASO DE ÉXITO",
     industry: "Metalmecánica",
@@ -65,34 +54,72 @@ const articles = [
   {
     type: "articulo",
     tag: "Artículos",
-    href: "/blog/excel-a-oxyplanner-planta-metalmecanica",
-    title: "De la rigidez del Excel a la agilidad de OxyPlanner: El futuro de la planta metalmecánica",
-    date: "20 Mar 2026",
-    description: "Cómo transformar la planificación de proyectos complejos en una ventaja competitiva con inteligencia industrial.",
+    href: "/blog/preparando-operaciones-manufactura-ia",
+    title: "Preparando las operaciones de manufactura para el futuro con IA",
+    date: "09 Mar 2026",
+    description: "Cómo la inteligencia artificial está transformando la forma en que las plantas industriales operan y toman decisiones.",
   },
   {
     type: "articulo",
     tag: "Artículos",
-    href: "/blog/planta-apta-para-ia",
-    title: "¿Tu planta es apta para la IA? Por qué planificar en el caos es un error",
-    date: "27 Feb 2026",
-    description: "La IA no hace magia si la realidad de tu planta no está registrada en el sistema. Preparando la industria para la transformación real.",
+    href: "/blog/senales-estrategia-mantenimiento",
+    title: "5 señales de que tu estrategia de mantenimiento necesita una actualización",
+    date: "20 Feb 2026",
+    description: "Indicadores clave que muestran cuándo es momento de modernizar tu enfoque de mantenimiento industrial.",
   },
   {
     type: "articulo",
     tag: "Guías",
-    href: "/blog/mantenimiento-preventivo-vs-correctivo",
-    title: "Mantenimiento Preventivo vs. Correctivo: La guía definitiva",
-    date: "17 Feb 2026",
-    description: "Entiende las diferencias, cuándo aplicar cada estrategia y cómo un CMMS transforma la gestión de mantenimiento.",
-  },
-  {
-    type: "articulo",
-    tag: "Guías",
-    href: "/blog/que-es-un-cmms",
-    title: "¿Qué es un CMMS y para qué sirve realmente?",
-    date: "11 Feb 2026",
+    href: "/blog/que-es-software-mantenimiento",
+    title: "Qué es un software de mantenimiento",
+    date: "15 Ene 2026",
     description: "Todo lo que necesitas saber sobre los sistemas CMMS y cómo pueden transformar la gestión de mantenimiento en tu planta.",
+    available: false,
+  },
+  {
+    type: "articulo",
+    tag: "Guías",
+    href: "/blog/plan-mantenimiento-8-pasos",
+    title: "Tu plan de mantenimiento en 8 pasos",
+    date: "10 Ene 2026",
+    description: "Una guía práctica para estructurar un plan de mantenimiento preventivo que tu equipo realmente cumpla.",
+    available: false,
+  },
+  {
+    type: "articulo",
+    tag: "Guías",
+    href: "/blog/ventajas-cmms",
+    title: "Ventajas de utilizar un CMMS",
+    date: "05 Ene 2026",
+    description: "Por qué las plantas industriales líderes abandonaron las planillas y adoptaron un CMMS para gestionar sus activos.",
+    available: false,
+  },
+  {
+    type: "articulo",
+    tag: "Guías",
+    href: "/blog/olvidate-excel-mantenimiento",
+    title: "Olvídate del Excel en mantenimiento",
+    date: "28 Dic 2025",
+    description: "Cómo dejar de depender de hojas de cálculo y pasar a una gestión de mantenimiento con trazabilidad real.",
+    available: false,
+  },
+  {
+    type: "articulo",
+    tag: "Guías",
+    href: "/blog/mantenimiento-predictivo",
+    title: "Mantenimiento predictivo: qué es y cómo implementarlo",
+    date: "20 Dic 2025",
+    description: "Diferencias entre mantenimiento correctivo, preventivo y predictivo, y cómo dar el salto con datos e inteligencia artificial.",
+    available: false,
+  },
+  {
+    type: "articulo",
+    tag: "Guías",
+    href: "/blog/glosario-mantenimiento-industrial",
+    title: "Glosario de mantenimiento industrial",
+    date: "10 Dic 2025",
+    description: "Los términos esenciales que todo gestor de mantenimiento debe conocer: OEE, MTBF, MTTR, backlog y más.",
+    available: false,
   },
 ]
 
@@ -123,7 +150,7 @@ function CaseCard({ c, index }: { c: typeof cases[0]; index: number }) {
   return (
     <div
       ref={ref}
-      className="group rounded-3xl border bg-white overflow-hidden transition-all duration-700 hover:shadow-xl flex flex-col"
+      className="group rounded-3xl border bg-white overflow-hidden transition-all duration-700 hover:shadow-xl"
       style={{
         borderColor: "#e5e7eb",
         opacity: visible ? 1 : 0,
@@ -131,16 +158,16 @@ function CaseCard({ c, index }: { c: typeof cases[0]; index: number }) {
         transitionDelay: `${index * 80}ms`,
       }}
     >
-      <div className="h-1 flex-shrink-0" style={{ background: c.available ? "linear-gradient(90deg,#4361ee,#1e40af)" : "#e5e7eb" }} />
-      <div className="p-8 flex flex-col flex-1">
+      <div className="h-1" style={{ background: c.available ? "linear-gradient(90deg,#4361ee,#1e40af)" : "#e5e7eb" }} />
+      <div className="p-8">
         <div className="flex items-center gap-3 mb-6">
           <span className="text-xs font-bold tracking-widest" style={{ color: c.available ? "#4361ee" : "#9ca3af" }}>
             {c.tag}
           </span>
           <span className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">{c.industry}</span>
         </div>
-        <h2 className="text-gray-900 font-bold text-lg leading-snug mb-4 line-clamp-3">{c.title}</h2>
-        <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">{c.summary}</p>
+        <h2 className="text-gray-900 font-bold text-lg leading-snug mb-4">{c.title}</h2>
+        <p className="text-gray-500 text-sm leading-relaxed mb-6">{c.summary}</p>
         <div className="flex flex-wrap gap-2 mb-8">
           {c.metrics.map((m, i) => (
             <span key={i} className="text-xs font-semibold px-3 py-1 rounded-full"
@@ -149,15 +176,13 @@ function CaseCard({ c, index }: { c: typeof cases[0]; index: number }) {
             </span>
           ))}
         </div>
-        <div className="mt-auto">
-          {c.available ? (
-            <Link href={`/casos/${c.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#4361ee] group-hover:gap-3 transition-all">
-              Leer caso completo <ArrowRight size={14} />
-            </Link>
-          ) : (
-            <span className="text-sm text-gray-400">Próximamente disponible</span>
-          )}
-        </div>
+        {c.available ? (
+          <Link href={`/casos/${c.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#4361ee] group-hover:gap-3 transition-all">
+            Leer caso completo <ArrowRight size={14} />
+          </Link>
+        ) : (
+          <span className="text-sm text-gray-400">Próximamente disponible</span>
+        )}
       </div>
     </div>
   )
@@ -192,15 +217,18 @@ function ArticleCard({ a, index }: { a: typeof articles[0]; index: number }) {
             style={{ background: colors.bg, color: colors.text }}>
             {a.tag}
           </span>
-          <span className="text-xs text-gray-400">{a.date}</span>
         </div>
         <h3 className="text-gray-900 font-bold text-lg leading-snug mb-4 group-hover:text-[#4361ee] transition-colors">
           {a.title}
         </h3>
         <p className="text-gray-500 text-sm leading-relaxed mb-6">{a.description}</p>
-        <Link href={a.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4361ee] hover:gap-2.5 transition-all">
-          Leer más <ArrowRight size={13} />
-        </Link>
+        {a.available === false ? (
+          <span className="text-sm text-gray-400">Próximamente disponible</span>
+        ) : (
+          <Link href={a.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4361ee] hover:gap-2.5 transition-all">
+            Leer más <ArrowRight size={13} />
+          </Link>
+        )}
       </div>
     </div>
   )
@@ -294,35 +322,40 @@ function RecursosContent() {
           <div className="rounded-2xl overflow-hidden grid md:grid-cols-2 gap-0"
             style={{ border: "1px solid #e5e7eb" }}>
             {/* Text side */}
-            <div className="p-6 md:p-10 flex flex-col justify-center">
+            <div className="p-10 flex flex-col justify-center">
               <span className="inline-block text-xs font-bold tracking-widest px-3 py-1 rounded-full mb-6 w-fit"
                 style={{ background: "#f0f3ff", color: "#4361ee" }}>
                 DESTACADO
               </span>
-              <span className="text-xs font-semibold mb-3" style={{ color: "#4361ee" }}>Caso de éxito · Metalmecánica · 2 Feb 2026</span>
+              <span className="text-xs font-semibold mb-3" style={{ color: "#4361ee" }}>Artículos · 09 Mar 2026</span>
               <h2 className="text-gray-900 font-bold leading-snug mb-4" style={{ fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)" }}>
-                De la intuición a los datos: cómo AMCS transformó su mantenimiento industrial
+                Preparando las operaciones de manufactura para el futuro con IA
               </h2>
               <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                Con OxyPulse, AMCS pasó de Excel y memoria a trazabilidad total. Las órdenes de trabajo subieron un 152% y el cumplimiento del plan preventivo mejoró un 31.4%.
+                Cómo la inteligencia artificial está transformando la forma en que las plantas industriales operan y toman decisiones.
               </p>
-              {/* Metrics */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {["+152% MOs", "+31.4% preventivo", "100% trazabilidad"].map((m) => (
-                  <span key={m} className="text-xs font-semibold px-3 py-1 rounded-full"
-                    style={{ background: "#f0f3ff", color: "#4361ee" }}>
-                    {m}
-                  </span>
-                ))}
+              {/* Authors */}
+              <div className="flex flex-col gap-3 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-gray-200 flex items-center justify-center overflow-hidden flex-shrink-0"
+                    style={{ background: "linear-gradient(135deg, #c7d2fe, #818cf8)" }}>
+                    <span className="text-xs font-bold text-white">CA</span>
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-gray-900">Carlos Andrade</div>
+                    <div className="text-xs" style={{ color: "#4361ee" }}>Head of Industrial AI, Oxygen</div>
+                  </div>
+                </div>
               </div>
-              <Link href="/casos/amcs-digitalizacion-mantenimiento" className="inline-flex items-center gap-2 text-sm font-semibold w-fit px-5 py-2.5 rounded-xl transition-opacity hover:opacity-80"
+              <Link href="/blog/preparando-operaciones-manufactura-ia" className="inline-flex items-center gap-2 text-sm font-semibold w-fit px-5 py-2.5 rounded-xl transition-opacity hover:opacity-80"
                 style={{ background: "#4361ee", color: "white" }}>
-                Leer caso completo <ArrowRight size={14} />
+                Leer artículo <ArrowRight size={14} />
               </Link>
             </div>
-            {/* Visual side */}
+            {/* Image side */}
             <div className="relative min-h-[260px] md:min-h-0 flex items-center justify-center overflow-hidden"
               style={{ background: "linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%)" }}>
+              {/* Abstract decorative grid */}
               <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -331,8 +364,10 @@ function RecursosContent() {
                 </defs>
                 <rect width="100%" height="100%" fill="url(#grid)" />
               </svg>
+              {/* Glow orb */}
               <div className="absolute w-48 h-48 rounded-full opacity-30"
                 style={{ background: "radial-gradient(circle, #818cf8 0%, transparent 70%)", top: "50%", left: "50%", transform: "translate(-50%,-50%)" }} />
+              {/* Isotipo */}
               <div className="relative z-10 w-36 h-36 rounded-2xl flex items-center justify-center overflow-hidden"
                 style={{ background: "rgba(67,97,238,0.35)", border: "1px solid rgba(129,140,248,0.35)", backdropFilter: "blur(8px)" }}>
                 <img src="/logos/logo-v2-3.svg" alt="Oxygen" className="w-[160%] h-[160%] object-contain" style={{ filter: "brightness(0) invert(1) opacity(0.9)" }} />
@@ -404,7 +439,7 @@ function RecursosContent() {
           <div id="section-casos" className="mb-16">
             {activeFilter === "Todos" && (
               <h2 className="text-xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                <span className="w-1 h-5 rounded-full inline-block" style={{ background: "linear-gradient(#4361ee,#1e40af)" }} />
+                <span className="w-1 h-5 rounded-full inline-block" style={{ background: "linear-gradient(#4361ee,#7c3aed)" }} />
                 Casos de éxito
               </h2>
             )}
@@ -419,7 +454,7 @@ function RecursosContent() {
           <div id="section-articulos" className="mb-16">
             {activeFilter === "Todos" && (
               <h2 className="text-xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                <span className="w-1 h-5 rounded-full inline-block" style={{ background: "linear-gradient(#4361ee,#1e40af)" }} />
+                <span className="w-1 h-5 rounded-full inline-block" style={{ background: "linear-gradient(#4361ee,#7c3aed)" }} />
                 Artículos
               </h2>
             )}
@@ -434,7 +469,7 @@ function RecursosContent() {
           <div id="section-guias">
             {activeFilter === "Todos" && (
               <h2 className="text-xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                <span className="w-1 h-5 rounded-full inline-block" style={{ background: "linear-gradient(#4361ee,#1e40af)" }} />
+                <span className="w-1 h-5 rounded-full inline-block" style={{ background: "linear-gradient(#4361ee,#7c3aed)" }} />
                 Guías
               </h2>
             )}

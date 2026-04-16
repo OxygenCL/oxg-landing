@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
@@ -54,8 +54,7 @@ function WordReveal({ text, className, style }: { text: string; className?: stri
         transform: visible ? (rotVisible ? "translateY(0px)" : "translateY(12px)") : "translateY(28px)",
         transition: visible ? "opacity 0.4s ease, transform 0.4s ease"
           : `opacity 0.55s ease ${staticWords.length * 0.07}s, transform 0.55s cubic-bezier(0.22,1,0.36,1) ${staticWords.length * 0.07}s`,
-        background: "linear-gradient(90deg, #4361ee, #60a5fa, #93c5fd)",
-        WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+        color: "#8B9FFF",
       }}>{rotatingEnding[rotIndex]}</span>
     </h1>
   )
@@ -88,10 +87,7 @@ function RotatingHeading({ static: staticText, words, className, style }: { stat
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0px)" : "translateY(10px)",
           transition: "opacity 0.4s ease, transform 0.4s ease",
-          background: "linear-gradient(90deg, #4361ee, #60a5fa, #93c5fd)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
+          color: "#8B9FFF",
         }}>
           {words[index]}
         </span>
@@ -102,7 +98,7 @@ function RotatingHeading({ static: staticText, words, className, style }: { stat
 
 // Initials avatar color by index
 const avatarColors = [
-  "#122D87", "#4361ee", "#0d1b2e", "#1e40af", "#1e40af", "#0f4c81",
+  "#122D87", "#4361ee", "#0d1b2e", "#1e40af", "#3730a3", "#0f4c81",
   "#1a3a5c", "#2563eb", "#1e3a8a", "#1d4ed8", "#0e3460", "#0a2540",
   "#234b8a", "#153e75",
 ]
@@ -136,22 +132,28 @@ const team = [
   { name: "Armando Ortiz",          role: "Agente de Marketing"            },
 ]
 
-const industries = [
-  "Metalmecánica", "Alimentos y Bebidas", "Minería", "Logística",
-  "Forestal", "Agrícola", "Construcción", "Energía",
-  "Pesquero y Acuicultura", "Manufacturera", "Automotriz", "Retail y Facilities",
-]
+function HubSpotForm() {
+  useEffect(() => {
+    const script = document.createElement("script")
+    script.src = "https://js.hsforms.net/forms/embed/47294365.js"
+    script.defer = true
+    document.body.appendChild(script)
+    return () => {
+      document.body.removeChild(script)
+    }
+  }, [])
+
+  return (
+    <div
+      className="hs-form-frame"
+      data-region="na1"
+      data-form-id="288f7534-11de-4963-a0f1-5bd39435c07b"
+      data-portal-id="47294365"
+    />
+  )
+}
 
 export default function NosotrosPage() {
-  const [formData, setFormData] = useState({
-    nombre: "", empresa: "", industria: "", cargo: "", email: "", mensaje: "",
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    alert("Gracias por tu mensaje. Nos pondremos en contacto pronto.")
-  }
-
   return (
     <div className="min-h-screen bg-white">
 
@@ -176,7 +178,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* ── MISIÓN ── */}
-      <section className="bg-[#060e1f] border-t border-white/10">
+      <section className="bg-[#0d0020] border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -189,14 +191,12 @@ export default function NosotrosPage() {
             </div>
             <div className="space-y-4 text-white/60 text-base leading-relaxed">
               <p>
-                La industria de LATAM lleva décadas operando con herramientas que no fueron diseñadas para ella.
-                Equipos que conocen cada máquina de memoria, pero sin cómo registrarlo. Plantas que generan datos,
-                pero sin manera de convertirlos en decisiones.
+                Oxygen es una empresa tecnológica latinoamericana que combina inteligencia artificial,
+                ingeniería industrial y operaciones para ayudar a las fábricas a operar en su óptimo.
               </p>
               <p>
-                Oxygen nació para cambiar eso. Somos tecnología industrial construida desde adentro, para la
-                realidad de acá, no adaptada desde otro mercado. Porque las plantas de LATAM no necesitan
-                menos ambición. Necesitan mejores herramientas.
+                Creemos que la industria de LATAM merece tecnología de clase mundial construida desde adentro.
+                No a través de subsidios, sino a través de innovación y competitividad real.
               </p>
             </div>
           </div>
@@ -379,60 +379,7 @@ export default function NosotrosPage() {
             </h2>
             <p className="text-gray-500">Cuéntanos sobre tu operación y cómo podemos ayudarte.</p>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="nombre" className="block text-xs font-semibold text-gray-700 mb-1.5 uppercase tracking-wide">Nombre</label>
-                <input type="text" id="nombre" required value={formData.nombre}
-                  onChange={(e) => setFormData({ ...formData, nombre: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4361ee]/40 focus:border-[#4361ee] text-sm"
-                  placeholder="Tu nombre" />
-              </div>
-              <div>
-                <label htmlFor="empresa" className="block text-xs font-semibold text-gray-700 mb-1.5 uppercase tracking-wide">Empresa</label>
-                <input type="text" id="empresa" required value={formData.empresa}
-                  onChange={(e) => setFormData({ ...formData, empresa: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4361ee]/40 focus:border-[#4361ee] text-sm"
-                  placeholder="Nombre de tu empresa" />
-              </div>
-            </div>
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <label htmlFor="industria" className="block text-xs font-semibold text-gray-700 mb-1.5 uppercase tracking-wide">Industria</label>
-                <select id="industria" required value={formData.industria}
-                  onChange={(e) => setFormData({ ...formData, industria: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#4361ee]/40 focus:border-[#4361ee] text-sm">
-                  <option value="">Selecciona una industria</option>
-                  {industries.map((i) => <option key={i} value={i}>{i}</option>)}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="cargo" className="block text-xs font-semibold text-gray-700 mb-1.5 uppercase tracking-wide">Cargo</label>
-                <input type="text" id="cargo" required value={formData.cargo}
-                  onChange={(e) => setFormData({ ...formData, cargo: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4361ee]/40 focus:border-[#4361ee] text-sm"
-                  placeholder="Tu cargo" />
-              </div>
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-xs font-semibold text-gray-700 mb-1.5 uppercase tracking-wide">Email</label>
-              <input type="email" id="email" required value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4361ee]/40 focus:border-[#4361ee] text-sm"
-                placeholder="tu@empresa.com" />
-            </div>
-            <div>
-              <label htmlFor="mensaje" className="block text-xs font-semibold text-gray-700 mb-1.5 uppercase tracking-wide">Mensaje</label>
-              <textarea id="mensaje" rows={4} value={formData.mensaje}
-                onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-white border border-gray-200 text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#4361ee]/40 focus:border-[#4361ee] resize-none text-sm"
-                placeholder="Cuéntanos sobre tu operación y cómo podemos ayudarte..." />
-            </div>
-            <button type="submit"
-              className="w-full px-8 py-3.5 text-sm font-semibold bg-[#4361ee] text-white rounded-xl hover:bg-[#3451d1] transition-colors">
-              Enviar mensaje
-            </button>
-          </form>
+          <HubSpotForm />
         </div>
       </section>
 
