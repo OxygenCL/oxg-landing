@@ -939,30 +939,7 @@ export default function OxyPlannerPage() {
         </div>
       </section>
 
-      {/* ── 8. QUOTE ── */}
-      <section className="py-24" style={{ background: "linear-gradient(135deg, #0A2434 0%, #122D87 100%)" }}>
-        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest mb-10" style={{ color: "rgba(255,255,255,0.3)" }}>
-            Lo que dicen nuestros clientes
-          </p>
-          <blockquote className="font-semibold text-white leading-relaxed mb-8" style={{ fontSize: "clamp(1.2rem, 2vw, 1.7rem)" }}>
-            &quot;Antes tardábamos tres horas los lunes para armar el plan de la semana. Con OxyPlanner son 15 minutos. Y cuando algo falla en planta, el sistema ya nos dice cómo reorganizarnos.&quot;
-          </blockquote>
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm" style={{ background: "rgba(255,255,255,0.12)" }}>
-              MC
-            </div>
-            <div className="text-left">
-              <p className="text-white text-sm font-semibold">Marcela Contreras</p>
-              <p className="text-xs" style={{ color: "rgba(255,255,255,0.45)" }}>
-                Jefa de Producción — Planta de Alimentos, Colombia
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9. INTEGRATIONS ── */}
+      {/* ── 8. INTEGRATIONS ── */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
           <span className="text-xs font-bold tracking-widest uppercase" style={{ color: "#4361ee" }}>INTEGRACIONES</span>
