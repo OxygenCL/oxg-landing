@@ -217,7 +217,6 @@ function ArticleCard({ a, index }: { a: typeof articles[0]; index: number }) {
             style={{ background: colors.bg, color: colors.text }}>
             {a.tag}
           </span>
-          <span className="text-xs text-gray-400">{a.date}</span>
         </div>
         <h3 className="text-gray-900 font-bold text-lg leading-snug mb-4 group-hover:text-[#4361ee] transition-colors">
           {a.title}
