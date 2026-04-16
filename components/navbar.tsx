@@ -13,15 +13,15 @@ const products = [
 
 const industries = [
   { name: "Metalmecánica",         href: "/soluciones/metalmecanico", icon: Settings2    },
-  { name: "Alimentos y Bebidas",   href: "/soluciones/alimentos",     icon: Sandwich     },
-  { name: "Minería",               href: "/soluciones/mineria",       icon: HardHat      },
-  { name: "Logística",             href: "/soluciones/logistica",     icon: Truck        },
-  { name: "Forestal",              href: "/soluciones/forestal",      icon: TreePine     },
   { name: "Agrícola",              href: "/soluciones/agricola",      icon: Wheat        },
+  { name: "Alimentos y Bebidas",   href: "/soluciones/alimentos",     icon: Sandwich     },
   { name: "Construcción",          href: "/soluciones/construccion",  icon: Building2    },
   { name: "Energía",               href: "/soluciones/energia",       icon: Zap          },
-  { name: "Pesquero y Acuicultura",href: "/soluciones/pesquero",      icon: Fish         },
+  { name: "Forestal",              href: "/soluciones/forestal",      icon: TreePine     },
+  { name: "Logística",             href: "/soluciones/logistica",     icon: Truck        },
   { name: "Manufacturera",         href: "/soluciones/manufactura",   icon: Factory      },
+  { name: "Minería",               href: "/soluciones/mineria",       icon: HardHat      },
+  { name: "Pesquero y Acuicultura",href: "/soluciones/pesquero",      icon: Fish         },
   { name: "Retail y Facilities",   href: "/soluciones/retail",        icon: ShoppingCart },
 ]
 
