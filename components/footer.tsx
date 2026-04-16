@@ -41,7 +41,7 @@ export function Footer() {
               href="/nosotros#contacto"
               className="inline-flex mt-4 px-4 py-2 rounded-full text-xs font-semibold text-white border border-white/20 hover:bg-white/10 transition-colors"
             >
-              Habla con ventas →
+              Contactar con ventas →
             </Link>
           </div>
 
