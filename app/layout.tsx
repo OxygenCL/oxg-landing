@@ -32,11 +32,8 @@ export const metadata: Metadata = {
         url: '/icon-dark-32x32.png',
         media: '(prefers-color-scheme: dark)',
       },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
     ],
+    shortcut: '/favicon.ico',
     apple: '/apple-icon.png',
   },
 }
