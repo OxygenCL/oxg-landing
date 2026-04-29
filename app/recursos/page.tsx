@@ -17,7 +17,7 @@ const filterParamMap: Record<string, string> = {
 const cases = [
   {
     type: "caso",
-    slug: "amcs-digitalizacion-mantenimiento",
+    slug: "amcs",
     tag: "CASO DE ÉXITO",
     industry: "Metalmecánica",
     title: "De la intuición a los datos: cómo AMCS transformó su mantenimiento industrial",
@@ -65,7 +65,7 @@ const articles = [
   {
     type: "articulo",
     tag: "Artículos",
-    href: "/blog/excel-a-oxyplanner-planta-metalmecanica",
+    href: "/articulos/del-excel-a-oxyplanner",
     title: "De la rigidez del Excel a la agilidad de OxyPlanner: El futuro de la planta metalmecánica",
     date: "20 Mar 2026",
     description: "Cómo transformar la planificación de proyectos complejos en una ventaja competitiva con inteligencia industrial.",
@@ -73,7 +73,7 @@ const articles = [
   {
     type: "articulo",
     tag: "Artículos",
-    href: "/blog/planta-apta-para-ia",
+    href: "/articulos/planta-apta-para-ia",
     title: "¿Tu planta es apta para la IA? Por qué planificar en el caos es un error",
     date: "27 Feb 2026",
     description: "La IA no hace magia si la realidad de tu planta no está registrada en el sistema. Preparando la industria para la transformación real.",
@@ -81,7 +81,15 @@ const articles = [
   {
     type: "articulo",
     tag: "Guías",
-    href: "/blog/mantenimiento-preventivo-vs-correctivo",
+    href: "/guias/que-es-mantenimiento-preventivo",
+    title: "¿Qué es el mantenimiento preventivo y cómo implementarlo en tu empresa?",
+    date: "5 May 2026",
+    description: "Tipos, beneficios y 7 pasos para implementar un plan preventivo. Cómo digitalizarlo con un CMMS para reducir costos y paradas no planificadas.",
+  },
+  {
+    type: "articulo",
+    tag: "Guías",
+    href: "/guias/mantenimiento-preventivo-vs-correctivo",
     title: "Mantenimiento Preventivo vs. Correctivo: La guía definitiva",
     date: "17 Feb 2026",
     description: "Entiende las diferencias, cuándo aplicar cada estrategia y cómo un CMMS transforma la gestión de mantenimiento.",
@@ -89,7 +97,7 @@ const articles = [
   {
     type: "articulo",
     tag: "Guías",
-    href: "/blog/que-es-un-cmms",
+    href: "/guias/que-es-un-cmms",
     title: "¿Qué es un CMMS y para qué sirve realmente?",
     date: "11 Feb 2026",
     description: "Todo lo que necesitas saber sobre los sistemas CMMS y cómo pueden transformar la gestión de mantenimiento en tu planta.",
@@ -151,7 +159,7 @@ function CaseCard({ c, index }: { c: typeof cases[0]; index: number }) {
         </div>
         <div className="mt-auto">
           {c.available ? (
-            <Link href={`/casos/${c.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#4361ee] group-hover:gap-3 transition-all">
+            <Link href={`/casos-de-exito/${c.slug}`} className="inline-flex items-center gap-2 text-sm font-semibold text-[#4361ee] group-hover:gap-3 transition-all">
               Leer caso completo <ArrowRight size={14} />
             </Link>
           ) : (
@@ -315,7 +323,7 @@ function RecursosContent() {
                   </span>
                 ))}
               </div>
-              <Link href="/casos/amcs-digitalizacion-mantenimiento" className="inline-flex items-center gap-2 text-sm font-semibold w-fit px-5 py-2.5 rounded-xl transition-opacity hover:opacity-80"
+              <Link href="/casos-de-exito/amcs" className="inline-flex items-center gap-2 text-sm font-semibold w-fit px-5 py-2.5 rounded-xl transition-opacity hover:opacity-80"
                 style={{ background: "#4361ee", color: "white" }}>
                 Leer caso completo <ArrowRight size={14} />
               </Link>
