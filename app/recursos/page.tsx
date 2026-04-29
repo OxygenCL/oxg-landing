@@ -83,7 +83,7 @@ const articles = [
     tag: "Guías",
     href: "/guias/que-es-mantenimiento-preventivo",
     title: "¿Qué es el mantenimiento preventivo y cómo implementarlo en tu empresa?",
-    date: "5 May 2026",
+    date: "28 Abr 2026",
     description: "Tipos, beneficios y 7 pasos para implementar un plan preventivo. Cómo digitalizarlo con un CMMS para reducir costos y paradas no planificadas.",
   },
   {
@@ -147,7 +147,13 @@ function CaseCard({ c, index }: { c: typeof cases[0]; index: number }) {
           </span>
           <span className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-500">{c.industry}</span>
         </div>
-        <h2 className="text-gray-900 font-bold text-lg leading-snug mb-4 line-clamp-3">{c.title}</h2>
+        {c.available ? (
+          <Link href={`/casos-de-exito/${c.slug}`} className="text-gray-900 font-bold text-lg leading-snug mb-4 block hover:text-[#4361ee] transition-colors line-clamp-3">
+            {c.title}
+          </Link>
+        ) : (
+          <h2 className="text-gray-900 font-bold text-lg leading-snug mb-4 line-clamp-3">{c.title}</h2>
+        )}
         <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">{c.summary}</p>
         <div className="flex flex-wrap gap-2 mb-8">
           {c.metrics.map((m, i) => (
@@ -185,7 +191,7 @@ function ArticleCard({ a, index }: { a: typeof articles[0]; index: number }) {
   return (
     <div
       ref={ref}
-      className="group rounded-3xl border bg-white overflow-hidden transition-all duration-700 hover:shadow-xl"
+      className="group rounded-3xl border bg-white overflow-hidden transition-all duration-700 hover:shadow-xl flex flex-col"
       style={{
         borderColor: "#e5e7eb",
         opacity: visible ? 1 : 0,
@@ -194,7 +200,7 @@ function ArticleCard({ a, index }: { a: typeof articles[0]; index: number }) {
       }}
     >
       <div className="h-1" style={{ background: "linear-gradient(90deg,#4361ee,#1e40af)" }} />
-      <div className="p-8">
+      <div className="p-8 flex flex-col flex-1">
         <div className="flex items-center gap-3 mb-6">
           <span className="text-xs font-bold tracking-widest px-2 py-0.5 rounded-full"
             style={{ background: colors.bg, color: colors.text }}>
@@ -202,13 +208,15 @@ function ArticleCard({ a, index }: { a: typeof articles[0]; index: number }) {
           </span>
           <span className="text-xs text-gray-400">{a.date}</span>
         </div>
-        <h3 className="text-gray-900 font-bold text-lg leading-snug mb-4 group-hover:text-[#4361ee] transition-colors">
+        <Link href={a.href} className="text-gray-900 font-bold text-lg leading-snug mb-4 block hover:text-[#4361ee] transition-colors">
           {a.title}
-        </h3>
-        <p className="text-gray-500 text-sm leading-relaxed mb-6">{a.description}</p>
-        <Link href={a.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4361ee] hover:gap-2.5 transition-all">
-          Leer más <ArrowRight size={13} />
         </Link>
+        <p className="text-gray-500 text-sm leading-relaxed mb-6">{a.description}</p>
+        <div className="mt-auto">
+          <Link href={a.href} className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#4361ee] hover:gap-2.5 transition-all">
+            Leer más <ArrowRight size={13} />
+          </Link>
+        </div>
       </div>
     </div>
   )
