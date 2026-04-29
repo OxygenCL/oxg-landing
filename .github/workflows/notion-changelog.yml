@@ -1,0 +1,74 @@
+name: Notion Changelog
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  log-to-notion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Get changed files
+        id: files
+        run: |
+          FILES=$(git diff --name-only HEAD~1 HEAD | head -20 | tr '\n' ', ' | sed 's/,$//')
+          echo "changed=$FILES" >> $GITHUB_OUTPUT
+
+      - name: Create Notion entry
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+        run: |
+          COMMIT_MSG="${{ github.event.head_commit.message }}"
+          COMMIT_HASH="${{ github.event.head_commit.id }}"
+          SHORT_HASH="${COMMIT_HASH:0:7}"
+          COMMIT_URL="https://github.com/${{ github.repository }}/commit/${COMMIT_HASH}"
+          FECHA=$(date -u +"%Y-%m-%d")
+          FILES="${{ steps.files.outputs.changed }}"
+
+          # Detectar tipo por prefijo del commit
+          if echo "$COMMIT_MSG" | grep -qi "^feat"; then TYPE="Feature"
+          elif echo "$COMMIT_MSG" | grep -qi "^fix"; then TYPE="Fix"
+          elif echo "$COMMIT_MSG" | grep -qi "^seo\|sitemap\|robots"; then TYPE="SEO"
+          elif echo "$COMMIT_MSG" | grep -qi "^content\|contenido\|articulo\|guia"; then TYPE="Contenido"
+          else TYPE="Mejora"
+          fi
+
+          curl -s -X POST https://api.notion.com/v1/pages \
+            -H "Authorization: Bearer ${NOTION_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -H "Notion-Version: 2022-06-28" \
+            -d "{
+              \"parent\": { \"database_id\": \"${NOTION_DATABASE_ID}\" },
+              \"properties\": {
+                \"Título\": {
+                  \"title\": [{ \"text\": { \"content\": \"${COMMIT_MSG}\" } }]
+                },
+                \"Fecha\": {
+                  \"date\": { \"start\": \"${FECHA}\" }
+                },
+                \"Tipo\": {
+                  \"select\": { \"name\": \"${TYPE}\" }
+                },
+                \"Origen\": {
+                  \"select\": { \"name\": \"🤖 GitHub Actions\" }
+                },
+                \"Páginas afectadas\": {
+                  \"rich_text\": [{ \"text\": { \"content\": \"${FILES}\" } }]
+                },
+                \"Commit\": {
+                  \"url\": \"${COMMIT_URL}\"
+                },
+                \"Descripción\": {
+                  \"rich_text\": [{ \"text\": { \"content\": \"📝 Pendiente — agregar contexto en la próxima sesión con Claude.\" } }]
+                },
+                \"Estado\": {
+                  \"select\": { \"name\": \"✅ Publicado\" }
+                }
+              }
+            }"
